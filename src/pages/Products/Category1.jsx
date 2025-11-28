@@ -6,12 +6,12 @@ import ProductFilterWrap from './layout/ProductFilterWrap';
 import './scss/Category1.scss';
 import ProductList from './layout/ProductList';
 import { CustomItem } from '../../store/data';
-import { Link, useParams, useNavigate } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect,  useState } from 'react';
 import ProductListSkeleton from './layout/ProductListSkeleton';
 const Category1 = () => {
   const { category1, category2, tags } = useParams();
-  const { items, filterCategory1, onCustomStyle } = useProductsStore();
+  const { items,  onCustomStyle } = useProductsStore();
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [extraFilteredList, setExtraFilteredList] = useState(null);
   const [custom, setCustom] = useState(false);

@@ -3,7 +3,8 @@ import { create } from 'zustand';
 import { products } from '../api/products';
 import { categoryKorMap, CustomItem } from './data';
 import { db } from '../api/firebase';
-import { doc, getDoc, setDoc, collection, addDoc, serverTimestamp } from 'firebase/firestore';
+// import { doc, getDoc, setDoc, collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { doc, getDoc, setDoc, collection, addDoc } from 'firebase/firestore';
 import { useAuthStore } from '../api/authStore';
 import { generateOrderNumber } from '../pages/Checkout/MyOrder/RamdomOrderNumber';
 
