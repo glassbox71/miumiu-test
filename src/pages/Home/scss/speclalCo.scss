@@ -1,0 +1,45 @@
+@use '../../../App.scss' as main;
+
+.speclalCol-wrap {
+  .inner {
+    padding: 100px 0;
+    h2 {
+      font-family: 'Libre Baskerville';
+      @include main.font(3rem, 700, main.$base);
+      line-height: 44px;
+      text-align: center;
+    }
+    .speclal-item {
+      padding-top: 60px;
+      @include main.flex(center, center, 24px);
+      .speclal-item-box {
+        aspect-ratio: 708/708;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        @include main.flex(flex-start, end, 24px);
+        .text-wrap {
+          margin: 0 0 60px 50px;
+          width: fit-content;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .sp-text1,
+        .sp-text2 {
+          font-family: 'Libre Baskerville';
+          @include main.font(3.6rem, 700, #fff);
+          line-height: 60px;
+          background-color: main.$base;
+          display: inline-block;
+          padding: 0 12px;
+        }
+
+        .sp-text2 {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@use './lnb.scss' as header;
+
+.lnb-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  .hi {
+    gap: 10rem;
+  }
+
+  .lnb-left {
+    width: 33%;
+    display: flex;
+    .lnb-menus {
+      @include header.fontStyle;
+    }
+
+    .lnb-img {
+      width: 38.2rem;
+      img {
+        aspect-ratio: 382/257;
+      }
+    }
+  }
+  .lnb-right {
+    width: 48%;
+    display: flex;
+    .lnb-menus {
+      @include header.fontStyle;
+    }
+    .lnb-imgs {
+      display: flex;
+      justify-content: end;
+      gap: 1.6%;
+
+      li {
+        position: relative;
+        width: 23%;
+        aspect-ratio: 200/257;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        // &::before {
+        //   content: attr(data-alt);
+        //   visibility: hidden;
+        //   opacity: 0;
+        //   position: absolute;
+        //   left: 0%;
+        //   top: 0%;
+        //   font-size: 1.6rem;
+        //   font-weight: 500;
+        //   color: #fff;
+        //   z-index: 10;
+        //   width: 100%;
+        //   height: 100%;
+        //   background-color: red;
+        // }
+        // &:hover {
+        //   &::before {
+        //     visibility: visible;
+        //     opacity: 1;
+        //   }
+        // }
+      }
+    }
+  }
+}

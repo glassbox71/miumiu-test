@@ -1,0 +1,54 @@
+@use '../../../../App.scss' as rt;
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  tr {
+    th {
+      background: rt.$line-f4;
+      border-top: 0.5px solid rt.$line;
+      border-bottom: 0.5px solid rt.$line;
+      border-right: 0.5px solid rt.$line;
+      text-align: center;
+      padding: 12px 16px;
+      @include rt.font(1.4rem, 400, rt.$text-333);
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    td {
+      border-bottom: 0.5px solid rt.$line;
+      border-right: 0.5px solid rt.$line;
+      padding: 16px;
+      text-align: center;
+      @include rt.font(1.4rem, 400, rt.$text-333);
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(6),
+      &:nth-child(7) {
+        width: 15.33%;
+      }
+
+      &:nth-child(5) {
+        width: 8%;
+      }
+
+      &:nth-child(1),
+      &:nth-child(3),
+      &:nth-child(4),
+      &:nth-child(6) {
+        text-align: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@use '../../../App.scss' as main;
+@use './keyframes.scss' as line;
+
+.intro {
+  .photo-box {
+    top: 0;
+    width: 100%;
+    aspect-ratio: 1920/1080;
+    height: auto;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include main.flex(center, center, 0);
+
+    strong {
+      font-size: 4vw;
+      color: #fff;
+      font-family: 'Libre Baskerville';
+    }
+  }
+}
+button {
+  border: 1px solid blue;
+}

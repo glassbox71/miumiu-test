@@ -1,0 +1,71 @@
+@use '../../../../App.scss' as mypage;
+
+.mypage-banner-wrap {
+  @include mypage.flex(center, center, 0);
+  width: 100%;
+  height: 50rem;
+  margin-top: 8rem;
+  background: url('../../../../../public/assets/images/static/mypage-bg.jpg') no-repeat;
+  background-position: center;
+
+  .mypage-banner-inner {
+    @include mypage.flex(space-between, center, 0);
+    width: 1440px;
+    height: 100%;
+
+    .banner-text {
+      height: 50rem;
+      @include mypage.flex(center, flex-start, 60px);
+      flex-direction: column;
+      > .welcome-text {
+        @include mypage.font(4.8rem, 600, #fff);
+        font-family: 'Libre Baskerville';
+      }
+
+      > .userName {
+        @include mypage.font(3rem, 500, #fff);
+
+        span {
+          color: #fff;
+          font-size: 3rem;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .banner-right {
+      @include mypage.flex(space-between, center, 0);
+      width: 33%;
+      height: 18rem;
+      gap: 30px;
+
+      > div {
+        aspect-ratio: 11 / 9;
+        width: 50vw;
+        max-width: 220px;
+        border-radius: 8px;
+        padding: 28px;
+        box-sizing: border-box;
+        @include mypage.modalBack();
+        @include mypage.flex(space-between, flex-start, auto);
+        flex-direction: column;
+
+        .bannerTitle {
+          @include mypage.font(1.8rem, 500, #fff);
+          width: 100%;
+        }
+
+        > .bannerCount {
+          @include mypage.font(4rem, 600, #fff);
+          text-align: right;
+          width: 100%;
+
+          > span {
+            @include mypage.font(2rem, 500, #fff);
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+  }
+}

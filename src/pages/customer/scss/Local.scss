@@ -1,0 +1,103 @@
+@use '../../../App.scss' as map;
+
+.Local-wrap {
+  overflow: hidden;
+  .map-wrap {
+    width: 100vw;
+    height: 100vh;
+
+    .kakaoMap {
+      width: 100%;
+      height: 100%;
+      filter: grayscale(0.8);
+    }
+  }
+
+  //매장찾기
+  .sidebar {
+    width: 30%;
+    aspect-ratio: 566/880;
+    position: absolute;
+    top: 0px;
+    padding-top: 80px;
+    right: 0;
+    z-index: 10;
+    background: #fff;
+    height: 100vh;
+    overflow-y: auto;
+
+    .fixed-wrap {
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      z-index: 1;
+      padding-bottom: 40px;
+      h2 {
+        text-align: start;
+        padding: 40px 40px 30px 40px;
+      }
+      .input-wrap {
+        padding: 0 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        input {
+          width: 100%;
+          &:disabled {
+            background-color: map.$line-f4;
+          }
+        }
+      }
+    }
+
+    .location-btn-wrap {
+      @include map.flex(start, start, 0);
+      flex-direction: column;
+      width: 100%;
+      position: relative;
+
+      .location-btn {
+        width: 100%;
+        @include map.flex(start, start, 0);
+        flex-direction: column;
+        border-bottom: 1px solid map.$line-f4;
+
+        padding: 30px 40px;
+
+        &.active {
+          background: map.$line-f4;
+        }
+
+        .location-name {
+          @include map.font(1.6rem, 500, map.$base);
+          line-height: 120%;
+        }
+
+        .location-address {
+          @include map.font(1.4rem, 400, map.$base);
+          line-height: 120%;
+          text-align: start;
+          word-break: keep-all;
+          margin-top: 14px;
+        }
+
+        .location-tel {
+          @include map.font(1.4rem, 400, map.$base);
+          line-height: 120%;
+          margin-top: 8px;
+        }
+
+        .location-status {
+          @include map.font(1.4rem, 400, map.$text-666);
+          line-height: 120%;
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  display: none;
+}

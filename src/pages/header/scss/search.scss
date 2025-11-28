@@ -1,0 +1,205 @@
+@use '../../../App.scss' as main;
+
+.search-wrap {
+  visibility: hidden;
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 46rem;
+  margin: 0 auto;
+  z-index: 10;
+  border: 1px solid red;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    background: main.$base;
+    width: 100%;
+    height: 8rem;
+    bottom: 100%;
+  }
+
+  &.active {
+    visibility: visible;
+  }
+
+  .background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include main.modalBack();
+
+    .container {
+      display: flex;
+      width: 100%;
+      aspect-ratio: 1920/460;
+      background-color: #fff;
+      @include main.flex(center, center, 0);
+      margin-top: 0px;
+      padding: 60px 0;
+
+      .box {
+        @include main.flex(start, start, 40px);
+        flex-direction: column;
+        width: 48%;
+        aspect-ratio: 920/340;
+      }
+
+      .search-box {
+        width: 100%;
+        position: relative;
+
+        input {
+          width: 100%;
+          aspect-ratio: 920/46;
+          background-color: #fff;
+          @include main.font(2rem, 400, main.$base);
+          border-bottom: 2px solid main.$base;
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 2.4rem;
+          height: 2.4rem;
+        }
+      }
+
+      .search-list {
+        background-color: #fff;
+        @include main.flex(space-between, start, auto);
+        width: 100%;
+        aspect-ratio: 920/252;
+
+        /* ✅ 최근 검색어 */
+        .lasted-search {
+          width: 50%;
+          margin-right: 4rem;
+
+          p {
+            @include main.font(1.6rem, 500);
+          }
+
+          .lasted-list {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(5, auto);
+            grid-auto-flow: column;
+            gap: 2rem 16%;
+            list-style: none;
+
+            li {
+              @include main.flex(space-between, start, auto);
+              @include main.font(1.4rem, 400, main.$text-666);
+              cursor: pointer;
+
+              span {
+                flex: 1;
+              }
+
+              button {
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+
+                img {
+                  width: 1.2rem;
+                  height: 1.2rem;
+                }
+              }
+            }
+
+            .empty {
+              grid-column: 1 / -1;
+              @include main.font(1.4rem, 400, main.$text-666);
+            }
+          }
+        }
+
+        .divider {
+          width: 0.1rem;
+          height: 25.2rem;
+          background: #c4c4c4;
+        }
+
+        /*  추천 검색어 - 최근검색어와 비슷한 레이아웃 */
+        .recommend-search {
+          width: 42rem;
+          margin-left: 4rem;
+
+          p {
+            @include main.font(1.6rem, 500);
+
+            .recent-label {
+              margin-left: 0.6rem;
+              @include main.font(1.3rem, 400, main.$text-666);
+            }
+          }
+
+          .recommend-list {
+            margin-top: 3rem;
+
+            .empty {
+              @include main.font(1.4rem, 400, main.$text-666);
+            }
+
+            // ✅ 최근 검색어랑 같은 형태의 2열 그리드
+            ul {
+              margin: 0;
+              padding: 0;
+              list-style: none;
+
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: repeat(5, auto);
+              grid-auto-flow: column;
+              gap: 2rem 16%;
+            }
+
+            li {
+              @include main.flex(space-between, center, auto);
+              @include main.font(1.4rem, 400, main.$text-666);
+
+              .recommend-item {
+                flex: 1;
+                text-align: left;
+                background: none;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                @include main.font(1.4rem, 400, main.$text-666);
+
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
+        }
+
+        .no-result-container {
+          @include main.flex(center, center, 2rem);
+          flex-direction: column;
+          width: 100%;
+          gap: 2rem;
+        }
+
+        .no-result-text {
+          @include main.font(2rem, 500);
+        }
+
+        .no-result-subtext {
+          @include main.font(1.4rem, 400, main.$text-666);
+        }
+      }
+    }
+  }
+}

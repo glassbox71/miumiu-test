@@ -1,0 +1,44 @@
+@use '../../../App.scss' as main;
+@use './keyframes.scss' as line;
+
+.MostLove {
+  padding: 218px 0;
+  h2 {
+    text-align: center;
+    font-family: 'Libre Baskerville';
+    @include main.font(3rem, 700, main.$base);
+    margin-bottom: 60px;
+  }
+
+  .item-box {
+    @include main.flex(space-between, center, 1.6%);
+
+    .item {
+      width: 18%;
+      .item-img {
+        position: relative;
+        aspect-ratio: 330/440;
+
+        .bannerImg-hover {
+          position: absolute;
+          top: 0;
+          opacity: 0;
+          transition: ease 0.2s;
+        }
+
+        &:hover {
+          .bannerImg-hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      .title {
+        @include main.font(1.8rem, 500, main.$base);
+        text-align: center;
+        margin-top: 20px;
+        user-select: none;
+      }
+    }
+  }
+}

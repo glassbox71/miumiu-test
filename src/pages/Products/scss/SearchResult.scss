@@ -1,0 +1,47 @@
+@use '../../../App.scss' as pd;
+
+.search-result-container {
+  margin-top: 80px;
+
+  .ProductBanner {
+    background: none;
+    padding-bottom: 50px;
+    display: flex;
+    @include pd.flex(center, center, 0);
+  }
+
+  h2 {
+    @include pd.font(2.2rem, 500, pd.$base);
+    span {
+      color: #0068f0;
+    }
+  }
+  span {
+    @include pd.font(2.2rem, 500, pd.$base);
+    margin-left: 4px;
+  }
+
+  .search-product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+
+    .item {
+      aspect-ratio: 447/595;
+      position: relative;
+      min-width: 240px;
+
+      .product-text-box {
+        padding: 30px;
+
+        h3 {
+          @include pd.font(2.2rem, 400, pd.$base);
+          margin-bottom: 12px;
+        }
+
+        p {
+          @include pd.font(1.8rem, 400, pd.$text-666);
+        }
+      }
+    }
+  }
+}

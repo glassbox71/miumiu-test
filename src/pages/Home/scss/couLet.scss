@@ -1,0 +1,42 @@
+@use '../../../App.scss' as main;
+
+.CousLetter-wrap {
+  .inner {
+    padding: 78px 0;
+    .box {
+      @include main.flex(center, flex-start, 24px);
+      align-items: stretch;
+
+      .boxlayout {
+        @include main.flex(null, flex-start, 0);
+        flex-direction: column;
+        width: 50%;
+        aspect-ratio: 708/440;
+        padding: 50px;
+
+        &:first-child {
+          background: url('../../../../public/assets/images/static/main/MiuService/package.png')
+            no-repeat;
+        }
+
+        &:last-child {
+          background: url('../../../../public/assets/images/static/main/MiuService/card.png')
+            no-repeat;
+        }
+        .title {
+          @include main.font(1.4rem, 400, main.$base);
+          margin-bottom: 18px;
+        }
+        .sub-title {
+          @include main.font(2.8rem, 600, main.$base);
+          line-height: 32px;
+          margin-bottom: 18px;
+        }
+
+        .sub-desc {
+          @include main.font(1.6rem, 400, main.$base);
+        }
+      }
+    }
+  }
+}

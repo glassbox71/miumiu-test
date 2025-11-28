@@ -1,0 +1,26 @@
+@use './lnb.scss' as header;
+
+.lnb-inner {
+  display: flex;
+  justify-content: space-between;
+
+  .hi {
+    gap: 10rem;
+  }
+
+  .lnb-left {
+    display: flex;
+    .lnb-menus {
+      @include header.fontStyle;
+    }
+  }
+  .lnb-right {
+    ul {
+      display: flex;
+      gap: 2.4rem;
+      img {
+        aspect-ratio: 200/257;
+      }
+    }
+  }
+}

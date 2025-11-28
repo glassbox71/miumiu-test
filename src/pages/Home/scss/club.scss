@@ -1,0 +1,70 @@
+@use '../../../App.scss' as cl;
+@use './keyframes.scss' as roll;
+
+.miu-club-wrap {
+  background-color: cl.$base;
+  height: 100vh;
+  .inner {
+    @include cl.flex(center, center, 72px);
+    height: 100%;
+    aspect-ratio: 1920/1080;
+    overflow: hidden;
+
+    .club-title {
+      flex-grow: 1;
+      width: 100%;
+      > h2 {
+        font-family: 'Libre Baskerville';
+        @include cl.font(4rem, 700, #fff);
+        line-height: 1.6;
+        padding-bottom: 30px;
+        text-align: start;
+      }
+      > p {
+        @include cl.font(1.8rem, 400, #fff);
+        line-height: 1.6;
+      }
+    }
+
+    .club-slides {
+      display: flex;
+      width: 100%;
+      gap: 100px;
+      .slider-card {
+        height: max-content;
+        animation: bannerScrollY 40s linear infinite;
+
+        &.paused {
+          animation-play-state: paused;
+        }
+      }
+
+      .slider-card2 {
+        height: fit-content;
+        animation: bannerScrollReturnY 40s linear infinite;
+
+        &.paused {
+          animation-play-state: paused;
+        }
+      }
+
+      .card-container {
+        .card-box {
+          width: 360px;
+
+          margin-bottom: 80px;
+          .card-menu {
+            @include cl.font(1.4rem, 400, #fff);
+            line-height: 22px;
+            margin-top: 31px;
+          }
+          .card-title {
+            @include cl.font(2.2rem, 500, #fff);
+            line-height: 33px;
+            margin-top: 8px;
+          }
+        }
+      }
+    }
+  }
+}

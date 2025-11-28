@@ -1,0 +1,94 @@
+@use '../../../App.scss' as ca;
+
+.add-cart {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1000;
+  @include ca.modalBack();
+
+  .add-cart-wrap {
+    width: 40vw;
+    height: 100vh;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(0);
+    display: flex;
+    flex-direction: column;
+
+    .cartpop-top {
+      @include ca.flex(space-between, center, 0);
+      border-bottom: 1px solid #e4e4e4;
+      padding: 0 30px;
+      height: 65px;
+      flex-shrink: 0;
+
+      h2 {
+        @include ca.font(2.2rem, 500, ca.$base);
+      }
+
+      .close-icon {
+        cursor: pointer;
+        padding: 10px;
+      }
+    }
+
+    .cartpop-list {
+      padding: 40px 30px;
+      overflow-x: hidden;
+      overscroll-behavior: contain;
+      .cartItem {
+        border-bottom: 1px solid #e4e4e4;
+      }
+    }
+
+    .cartpop-bottom {
+      border-top: 1px solid #e4e4e4;
+      padding: 30px;
+
+      .cartpop-title {
+        @include ca.flex(space-between, center, 0);
+        margin-bottom: 30px;
+
+        h3 {
+          @include ca.font(1.8rem, 500, ca.$base);
+          span {
+            @include ca.font(1.8rem, 400, ca.$text-666);
+          }
+        }
+
+        p {
+          @include ca.font(2rem, 500, ca.$base);
+        }
+      }
+      button {
+        width: 100%;
+        aspect-ratio: 652/56;
+
+        &:nth-child(2) {
+          border: 1px solid ca.$base;
+          background-color: #fff;
+          color: ca.$base;
+          margin-bottom: 10px;
+
+          &:hover {
+            background-color: ca.$line-f4;
+          }
+        }
+        &:nth-child(3) {
+          border: 1px solid ca.$base;
+          background-color: ca.$base;
+          color: #fff;
+
+          &:hover {
+            background-color: ca.$text-333;
+          }
+        }
+      }
+    }
+  }
+}

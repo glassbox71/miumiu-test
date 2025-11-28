@@ -1,0 +1,25 @@
+@use './../../../App.scss' as main;
+
+.main {
+  .newItem {
+    @include main.flex(center, stretch, 10%);
+    aspect-ratio: 1440/1000;
+  }
+
+  .fw-collection {
+    max-width: 778px;
+    aspect-ratio: 778/1000;
+    overflow: hidden;
+
+    .swiper {
+      .swiper-wrapper {
+        width: 400%;
+        @include main.flex(start, center, 0);
+      }
+    }
+  }
+
+  .inner-second {
+    background: #f5f5f5;
+  }
+}

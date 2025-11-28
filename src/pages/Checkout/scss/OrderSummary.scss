@@ -1,0 +1,207 @@
+@use '../../../App.scss' as su;
+
+.OrderSummary-wrap {
+  display: flex;
+  width: 100%;
+  margin-top: 80px;
+  background-color: #f5f5f5;
+}
+
+.summary-left {
+  aspect-ratio: 1208/2400;
+  flex: 0 0 70%;
+  padding: 40px 60px;
+}
+
+.summary-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  p {
+    @include su.font(2.2rem, 500, su.$base);
+  }
+
+  ul {
+    display: flex;
+
+    li:nth-child(2) {
+      @include su.font(1.8rem, 500, su.$base);
+    }
+
+    li:first-child,
+    li:last-child {
+      @include su.font(1.8rem, 500, su.$text-bbb);
+    }
+  }
+}
+
+.info-left {
+  padding: 40px;
+  background-color: #fff;
+
+  .delivery-info,
+  .store-info {
+    div {
+      margin-bottom: 70px;
+    }
+
+    h4 {
+      @include su.font(1.8rem, 600, su.$base);
+      padding-bottom: 20px;
+    }
+
+    li {
+      @include su.font(1.6rem, 400, su.$text-333);
+      line-height: 150%;
+    }
+  }
+
+  .selectedItem {
+    margin-bottom: 70px;
+
+    h4 {
+      @include su.font(1.8rem, 600, su.$base);
+      padding-bottom: 20px;
+    }
+
+    .item {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      border: 1px solid su.$line-ddd;
+      border-radius: 4px;
+      margin-bottom: 15px;
+
+      img {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        flex-shrink: 0; // 이미지 크기 고정
+      }
+
+      .item-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        flex: 1;
+
+        .name {
+          @include su.font(1.6rem, 600, su.$base);
+        }
+
+        .quantity {
+          @include su.font(1.4rem, 400, su.$text-666);
+        }
+
+        .price {
+          @include su.font(1.8rem, 600, su.$base);
+          margin-top: auto; // 가격을 아래로
+        }
+      }
+    }
+  }
+
+  .msg-input {
+    margin-bottom: 70px;
+    h4 {
+      @include su.font(1.8rem, 600, su.$base);
+      padding-bottom: 10px;
+    }
+
+    p {
+      @include su.font(1.4rem, 400, su.$text-666);
+      padding-bottom: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1.4rem;
+      resize: none;
+    }
+
+    .char-count {
+      display: block;
+      text-align: right;
+      margin-top: 5px;
+      @include su.font(1.2rem, 400, #999);
+    }
+  }
+
+  .agree19 {
+    margin-bottom: 30px;
+    label {
+      display: flex;
+      input {
+        width: 2rem;
+        height: 2rem;
+        accent-color: su.$base;
+        margin-right: 1rem;
+        pointer-events: auto;
+        appearance: auto;
+        -webkit-appearance: auto;
+      }
+      span {
+        @include su.font(1.6rem, 400, su.$text-333);
+        line-height: 140%;
+      }
+    }
+  }
+
+  &.err {
+    label {
+      span {
+        @include su.font(1.4rem, 400, #ff0000);
+      }
+    }
+  }
+  .err-msg {
+    @include su.font(1.2rem, 400, #ff0000);
+    padding: 8px 0 0 2.1rem;
+  }
+
+  .order-btn {
+    @include su.flex(center, stretch, 20px);
+
+    .miu-btn {
+      aspect-ratio: 700 / 60;
+
+      &:nth-child(1) {
+        @include su.font(1.6rem, 600, su.$base);
+
+        width: 20%;
+        border: 1px solid su.$base;
+        background-color: #fff;
+        padding: 10px 16px;
+
+        &:hover {
+          background: su.$line-f4;
+        }
+      }
+
+      &:nth-child(2) {
+        @include su.font(1.6rem, 600, #fff);
+        width: 80%;
+
+        border: 1px solid su.$base;
+        background-color: su.$base;
+        padding: 10px 16px;
+
+        &:hover {
+          background: su.$text-333;
+        }
+      }
+    }
+  }
+}
+
+.CartTotalPrice {
+  .price-btn {
+    display: none;
+  }
+}

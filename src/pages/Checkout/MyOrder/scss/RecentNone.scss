@@ -1,0 +1,12 @@
+@use '../../../../App.scss' as rn;
+
+.recentNone {
+  width: 100%;
+  aspect-ratio: 7.2/1;
+  background: #fff;
+  border-top: 1px solid rn.$line-ddd;
+  border-bottom: 1px solid rn.$line-ddd;
+  padding: 30px 40px;
+  @include rn.flex(center, center, 0);
+  @include rn.font(2rem, 500, rn.$base);
+}

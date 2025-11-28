@@ -1,0 +1,116 @@
+@use '../../../../App.scss' as ep;
+
+.edit-popup-wrap {
+  width: 100%;
+  height: 100vh;
+  @include ep.modalBack();
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  .edit-popup {
+    background: #fff;
+    width: 60rem;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    .title-wrap {
+      height: 9rem;
+      padding: 30px;
+      border-bottom: solid 1px #e4e4e4;
+      @include ep.flex(space-between, center, 0);
+
+      > h2 {
+        @include ep.font(2.2rem, 500, ep.$base);
+      }
+
+      > .popupClose-icon {
+        width: 2.4rem;
+        aspect-ratio: 24/20;
+        background: url('../../../../../public/assets/icon/close.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+      }
+    }
+
+    .popup-content {
+      @include ep.flex(center, center, 0);
+      flex-direction: column;
+      padding: 40px;
+
+      .input-wrap {
+        @include ep.flex(center, flex-start, 30px);
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 40px;
+
+        > h3 {
+          @include ep.font(2rem, 500, ep.$base);
+        }
+
+        > div {
+          width: 100%;
+        }
+
+        p {
+          @include ep.font(1.2rem, 400, ep.$base);
+          margin-bottom: 8px;
+        }
+
+        .lockedName-input {
+          input {
+            width: 100%;
+            border: 1px solid ep.$line;
+            border-radius: 4px;
+            padding: 16px 40px 16px 16px;
+            background-color: ep.$line-f4;
+            cursor: default;
+
+            &::placeholder {
+              @include ep.font(1.4rem, 400, ep.$text-666);
+            }
+          }
+        }
+        .emailEdit-input {
+          .emailEdit-text {
+            display: flex;
+            align-items: center;
+            > p {
+              @include ep.font(1.2rem, 400, ep.$base);
+            }
+            > span {
+              margin-left: 2%;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+
+      .button-wrap {
+        width: 100%;
+        @include ep.flex(space-between, center, 8px);
+
+        button {
+          flex: 1;
+          aspect-ratio: 32/7;
+          height: 5.6rem;
+          border: 1px solid ep.$base;
+          background-color: #fff;
+          @include ep.font(1.6rem, 600, ep.$base);
+
+          &:last-child {
+            background: ep.$base;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

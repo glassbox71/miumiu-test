@@ -1,0 +1,260 @@
+@use '../../../App.scss' as input;
+
+@mixin iconSuccess() {
+  width: 12px;
+  aspect-ratio: 1/1;
+  display: inline-block;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url('../../../../public/assets/icon/input-success.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+}
+
+@mixin iconPassword() {
+  width: 14px;
+  aspect-ratio: 14/16;
+  display: inline-block;
+  position: absolute;
+  right: 1.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url('../../../../public/assets/icon/input-password.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px 16px;
+}
+
+@mixin iconSearch() {
+  width: 14px;
+  aspect-ratio: 14/16;
+  display: inline-block;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url('../../../../public/assets/icon/SearchIcon.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px 16px;
+  filter: invert(1);
+  cursor: pointer;
+}
+
+//TODO input 디자인
+.base-input {
+  display: block;
+  input {
+    border: 1px solid input.$line;
+    border-radius: 4px;
+    padding: 16px 40px 16px 16px;
+    width: 100%;
+    @include input.font(1.4rem, 400, input.$base);
+
+    &::placeholder {
+      @include input.font(1.4rem, 400, input.$text-bbb);
+    }
+
+    &:focus::placeholder {
+      color: #fff;
+    }
+  }
+
+  .icon {
+    display: none;
+  }
+
+  .info {
+    display: none;
+  }
+
+  &.failure {
+    input {
+      border: 1px solid #ff0000;
+    }
+
+    .info {
+      display: block;
+      margin-top: 8px;
+      @include input.font(1.2rem, 400, #ff0000);
+    }
+    .hint {
+      display: none;
+    }
+  }
+
+  &.success {
+    position: relative;
+
+    input {
+      border: 1px solid input.$base;
+    }
+
+    .icon {
+      @include iconSuccess();
+    }
+    .hint {
+      display: none;
+    }
+  }
+}
+
+//TODO 인증 input
+.auth {
+  position: relative;
+
+  .auth-icon {
+    display: none;
+  }
+
+  .sand {
+    display: inline-block;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    @include input.font(1.4rem, 400, input.$text-666);
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      border-bottom: 1px solid input.$text-666;
+      width: 100%;
+    }
+  }
+
+  &.success {
+    .sand {
+      display: none;
+    }
+    .auth-icon {
+      @include iconSuccess();
+    }
+  }
+}
+
+//TODO 비밀번호 input
+.password {
+  position: relative;
+  .icon {
+    @include iconPassword();
+  }
+
+  &.success {
+    .icon {
+      @include iconSuccess();
+    }
+  }
+
+  &.failure {
+    .icon {
+      display: none;
+    }
+  }
+}
+
+//TODO 검색 input
+.search-input {
+  position: relative;
+  width: fit-content;
+  input {
+    border-bottom: 2px solid input.$base;
+    padding: 16px 40px 16px 16px;
+    @include input.font(1.4rem, 400, input.$base);
+    &::placeholder {
+      @include input.font(1.4rem, 400, input.$text-bbb);
+    }
+    &:focus::placeholder {
+      color: #fff;
+    }
+  }
+  .icon {
+    @include iconSearch();
+  }
+}
+
+//TODO 생일
+.birthday {
+  position: relative;
+  width: 100%;
+
+  &.success {
+    .icon {
+      @include iconSuccess();
+    }
+  }
+}
+
+//TODO 전화번호
+.phone {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    justify-content: center;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+  }
+}
+
+// TODO DropBox
+
+.base-input {
+  position: relative;
+  .dropBox-top {
+    height: auto;
+    border: 1px solid input.$line;
+    border-radius: 4px;
+    padding: 16px 40px 16px 16px;
+    @include input.font(1.4rem, 400, input.$text-bbb);
+    cursor: pointer;
+
+    &.active {
+      border: 1px solid input.$base;
+      @include input.font(1.4rem, 400, input.$base);
+    }
+
+    &::after {
+      position: absolute;
+      right: 16px;
+      content: '';
+      width: 18px;
+      aspect-ratio: 1/1;
+      display: inline-block;
+      // background: url('../../../../public/assets/icon/arrow.png');
+    }
+  }
+  .dropBox-bottom {
+    background-color: #fff;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    border: 1px solid input.$line;
+    border-radius: 4px;
+    padding: 16px 0;
+    @include input.font(1.4rem, 400, input.$text-bbb);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 9;
+
+    li {
+      border-bottom: 1px solid input.$skeleton;
+      @include input.font(1.4rem, 400, input.$text-333);
+      padding: 16px;
+      cursor: pointer;
+
+      &:hover {
+        background: input.$line-f4;
+      }
+    }
+  }
+}

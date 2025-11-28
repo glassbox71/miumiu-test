@@ -1,0 +1,109 @@
+@use '../../../App.scss' as main;
+
+@mixin img() {
+  display: flex;
+  aspect-ratio: 257/200;
+  gap: 2.4rem;
+  img {
+    height: 100%;
+  }
+}
+
+@mixin listStyle() {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+}
+
+@mixin fontStyle() {
+  .lnb-menus-title {
+    font-size: 1.6rem;
+    color: #888;
+    margin-bottom: 2rem;
+    user-select: none;
+  }
+  .lnb-sub-menus {
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    gap: 1.6rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    user-select: none;
+  }
+}
+
+.lnb-dimmed {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  @include main.modalBack();
+}
+
+.lnb-wrap {
+  justify-content: space-between;
+  width: 100%;
+  aspect-ratio: 1920/594;
+  max-height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  background-color: #fff;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 10;
+  padding: 13rem 4rem 5rem 4rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border-bottom: 1px solid main.$line;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 8rem;
+    background: main.$base;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &.active {
+    visibility: visible;
+  }
+
+  .lnb-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    display: flex;
+    gap: 3rem;
+    a {
+      text-decoration: none;
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+    .map {
+      flex-grow: 1;
+      display: flex;
+      justify-content: end;
+      @include main.font(1.8rem, 500, main.$base);
+    }
+  }
+
+  .lnb-list {
+    margin-top: 5rem;
+  }
+  .lnb-inner {
+    display: flex;
+  }
+}

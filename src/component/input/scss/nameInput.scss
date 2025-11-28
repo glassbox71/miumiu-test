@@ -1,0 +1,57 @@
+@use '../../../App.scss' as input;
+@use './Input.scss' as g;
+
+.name-wrap {
+  display: flex;
+  gap: 0.8rem;
+  .input-box {
+    display: inline-block;
+
+    input {
+      border: 1px solid input.$line;
+      border-radius: 4px;
+      padding: 16px 40px 16px 16px;
+      @include input.font(1.4rem, 400, input.$base);
+
+      &::placeholder {
+        @include input.font(1.4rem, 400, input.$text-bbb);
+      }
+
+      &:focus::placeholder {
+        color: #fff;
+      }
+    }
+
+    .icon {
+      display: none;
+    }
+
+    .info {
+      display: none;
+    }
+
+    &.failure {
+      input {
+        border: 1px solid #ff0000;
+      }
+
+      .info {
+        display: block;
+        margin-top: 8px;
+        @include input.font(1.2rem, 400, #ff0000);
+      }
+    }
+
+    &.success {
+      position: relative;
+
+      input {
+        border: 1px solid input.$base;
+      }
+
+      .icon {
+        @include g.iconSuccess();
+      }
+    }
+  }
+}

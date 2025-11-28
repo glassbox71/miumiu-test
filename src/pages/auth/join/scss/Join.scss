@@ -1,0 +1,153 @@
+@use '../../../../App.scss' as join;
+
+.join-wrap {
+  width: 100%;
+  height: 100vh;
+  @include join.flex(end, start, 0);
+  background: url('../../../../../public/assets/images/static/login_bg.jpg') no-repeat center/ cover;
+
+  .join-container {
+    width: 35%;
+    height: 100%;
+    @include join.flex(center, center, 0);
+    flex-direction: column;
+    background-color: #ffffff;
+    margin-right: 14%;
+    overflow: hidden;
+    min-width: 600px;
+
+    .join-inner {
+      position: relative;
+      width: 74%;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      h2 {
+        @include join.font($fs: 4rem, $fw: 500, $color: join.$base);
+        margin-top: 140px;
+        text-align: justify;
+      }
+      p {
+        margin-top: 1.6rem;
+        @include join.font($fs: 1.4rem, $fw: 400, $color: join.$base);
+        line-height: 150%;
+      }
+      .input-list {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        margin-top: 5rem;
+
+        .id-input {
+          input {
+            width: 100%;
+          }
+        }
+        .password-input {
+          input {
+            width: 100%;
+          }
+        }
+        .phone-input {
+          width: 100%;
+          .phone {
+            display: block;
+            input {
+              width: 100%;
+            }
+          }
+        }
+        .nation-input {
+          input {
+            width: 100%;
+            border: 1px solid join.$line;
+            border-radius: 4px;
+            padding: 16px 40px 16px 16px;
+            background-color: #f4f4f4;
+            @include join.font(1.4rem, 400, #888);
+
+            &::placeholder {
+              @include join.font(1.4rem, 400, join.$text-666);
+            }
+            .birthday-input {
+              .birthday {
+                input {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+        .check-wrap {
+          .agree-check {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.4rem;
+            input {
+              height: 2rem;
+              width: 2rem;
+              accent-color: join.$base;
+              cursor: pointer;
+              flex-shrink: 0;
+              pointer-events: auto;
+              appearance: auto;
+              -webkit-appearance: auto;
+            }
+            .agree-title {
+              margin-left: 1.2rem;
+              label {
+                @include join.font($fs: 1.4rem, $fw: 500, $color: join.$base);
+                line-height: 150%;
+                a {
+                  text-decoration: underline;
+                }
+                span:last-child {
+                  font-weight: 400;
+                }
+              }
+            }
+          }
+        }
+        .agree-radio {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          margin-top: 3rem;
+          label {
+            display: flex;
+            align-items: center;
+            @include join.font($fs: 1.4rem, $fw: 500, $color: join.$base);
+            input {
+              width: 2rem;
+              height: 2rem;
+              accent-color: join.$base;
+              margin-right: 1.2rem;
+              pointer-events: auto;
+              appearance: auto;
+              -webkit-appearance: auto;
+            }
+          }
+        }
+      }
+      .join-button {
+        display: block;
+        width: 100%;
+        height: 6rem;
+        background-color: #000;
+        color: #ffffff;
+        margin-top: 5rem;
+        margin-bottom: 80px;
+        text-align: center;
+        line-height: 6rem;
+        @include join.font(1.6rem, 600, #fff);
+
+        &:hover {
+          background-color: join.$text-333;
+        }
+      }
+    }
+  }
+}

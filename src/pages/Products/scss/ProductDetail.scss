@@ -1,0 +1,183 @@
+@use '../../../App.scss' as pd;
+
+.ProductDetail-wrap {
+  width: 100%;
+  padding-top: 80px;
+  margin-top: 60px;
+  .ProductDetail-top {
+    @include pd.flex(space-between, center, 4%);
+  }
+  .top-left {
+    width: 55%;
+    height: fit-content;
+    aspect-ratio: 1/1;
+    position: relative;
+    .sub-image {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      @include pd.flex(start, center, 8px);
+
+      li {
+        aspect-ratio: 1/1;
+        width: 7.5%;
+        cursor: pointer;
+        border: 2px solid pd.$text-bbb;
+        filter: opacity(0.5);
+
+        &.active {
+          filter: opacity(1);
+          border-bottom: 2px solid pd.$base;
+        }
+      }
+    }
+  }
+
+  .top-right {
+    flex-grow: 1;
+    margin-right: 1.6%;
+
+    .title {
+      @include pd.flex(space-between, start, 0);
+      .tag {
+        @include pd.font(1.4rem, 400, pd.$text-666);
+        line-height: 1;
+      }
+      .wish-icon {
+        width: 24px;
+        aspect-ratio: 24/20;
+        background: url('../../../../public/assets/icon/wish.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+        &.active {
+          background-image: url('../../../../public/assets/icon/Wish-active.svg');
+        }
+      }
+    }
+    h3 {
+      margin-top: 30px;
+      @include pd.font(3rem, 600, pd.$base);
+    }
+
+    .price {
+      margin-top: 16px;
+      @include pd.font(2rem, 500, pd.$base);
+    }
+
+    .price-button-wrap {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      button {
+        width: 100%;
+        aspect-ratio: 420/50;
+
+        &:nth-child(1) {
+          border: 1px solid pd.$base;
+          background-color: #fff;
+          color: pd.$base;
+
+          &:hover {
+            background: pd.$line-f4;
+          }
+        }
+        &:nth-child(2) {
+          border: 1px solid pd.$base;
+          background-color: pd.$base;
+          color: #fff;
+
+          &:hover {
+            background: pd.$text-333;
+          }
+        }
+      }
+    }
+  }
+
+  .ProductDetail-bottom {
+    margin-top: 140px;
+    margin-bottom: 200px;
+    height: fit-content;
+
+    .product-info {
+      .info-list {
+        @include pd.flex(center, center, 160px);
+        flex-direction: column;
+        list-style: none;
+        width: 63%;
+        margin: 0 auto;
+      }
+
+      .product-acc-info {
+        &.flex {
+          display: flex;
+          flex-direction: column;
+          gap: 100px;
+        }
+      }
+      .info {
+        h4 {
+          @include pd.font(2.2rem, 500, pd.$base);
+          text-align: center;
+        }
+        p {
+          margin-top: 20px;
+          @include pd.font(1.6rem, 400, pd.$text-666);
+          text-align: center;
+          word-break: keep-all;
+          line-height: 120%;
+        }
+
+        ul {
+          margin-top: 40px;
+
+          li {
+            @include pd.font(1.6rem, 400, pd.$text-666);
+            text-align: center;
+            word-break: keep-all;
+            line-height: 1.7;
+          }
+        }
+      }
+    }
+  }
+}
+
+.RelatedProducts {
+  @include pd.font(2.2rem, 500, pd.$base);
+  text-align: center;
+  margin-bottom: 24px;
+
+  h3 {
+    @include pd.font(2.2rem, 500, pd.$base);
+    text-align: center;
+    margin-bottom: 24px;
+    border: 1px solid re;
+  }
+
+  .products-wrap {
+    display: flex;
+    gap: 0.4rem;
+    list-style: none;
+
+    img {
+      width: 47.7rem;
+      aspect-ratio: 1/1;
+    }
+    .product-text-box {
+      padding: 3rem;
+      text-align: left;
+      > h3 {
+        text-align: left;
+        @include pd.font(2.2rem, 400, pd.$base);
+      }
+      > p {
+        @include pd.font(1.8rem, 400, pd.$text-666);
+      }
+    }
+  }
+}

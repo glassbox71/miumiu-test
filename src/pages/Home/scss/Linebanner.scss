@@ -1,0 +1,27 @@
+@use '../../../App.scss' as main;
+@use './keyframes.scss' as line;
+
+.line-banner {
+  overflow: hidden;
+  width: 100%;
+  background: main.$base;
+}
+
+.banner-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 32s linear infinite;
+}
+
+.banner-group {
+  display: flex;
+  gap: 33px;
+  padding: 24px 0;
+  margin-right: 33px;
+}
+
+.textBanner {
+  width: 130px;
+  height: 18p;
+  user-select: none;
+}

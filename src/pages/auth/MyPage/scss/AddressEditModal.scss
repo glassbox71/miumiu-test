@@ -1,0 +1,115 @@
+@use '../../../../App.scss' as am;
+
+.edit-popup-wrap {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  @include am.modalBack();
+
+  .edit-popup {
+    background: #fff;
+    width: 60rem;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    .title-wrap {
+      height: 9rem;
+      padding: 30px;
+      border-bottom: solid 1px #e4e4e4;
+      @include am.flex(space-between, center, 0);
+
+      > h2 {
+        @include am.font(2.2rem, 500, am.$base);
+      }
+
+      > .popupClose-icon {
+        width: 2.4rem;
+        aspect-ratio: 24/20;
+        background: url('../../../../../public/assets/icon/close.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    .popup-content {
+      @include am.flex(center, center, 0);
+      flex-direction: column;
+      padding: 40px;
+
+      .input-wrap {
+        @include am.flex(center, flex-start, 30px);
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 40px;
+
+        > h3 {
+          @include am.font(2rem, 500, am.$base);
+        }
+
+        > div {
+          width: 100%;
+        }
+
+        p {
+          @include am.font(1.2rem, 400, am.$base);
+          margin-bottom: 8px;
+        }
+
+        .nameEdit-input {
+          input {
+            width: 100%;
+            border: 1px solid am.$line;
+            border-radius: 4px;
+            padding: 16px 40px 16px 16px;
+            background-color: #fff;
+            cursor: default;
+
+            &::placeholder {
+              @include am.font(1.4rem, 400, am.$text-666);
+            }
+          }
+        }
+
+        .addressEdit-input {
+          input {
+            width: 100%;
+            border: 1px solid am.$line;
+            border-radius: 4px;
+            padding: 16px 40px 16px 16px;
+            background-color: #fff;
+
+            &::placeholder {
+              @include am.font(1.4rem, 400, am.$text-666);
+            }
+          }
+        }
+      }
+
+      .button-wrap {
+        width: 100%;
+        @include am.flex(space-between, center, 8px);
+
+        button {
+          flex: 1;
+          aspect-ratio: 32/7;
+          height: 5.6rem;
+          border: 1px solid am.$base;
+          background-color: #fff;
+          @include am.font(1.6rem, 600, am.$base);
+
+          &:last-child {
+            background: am.$base;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

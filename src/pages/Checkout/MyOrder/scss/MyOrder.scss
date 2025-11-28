@@ -1,0 +1,88 @@
+@use '../../../../App.scss' as mo;
+
+.container {
+  .ongoingOrder {
+    margin-bottom: 80px;
+    h2 {
+      @include mo.font(3.2rem, 500, mo.$base);
+      margin-bottom: 30px;
+    }
+
+    .ongoingCard-wrap {
+      margin-top: 30px;
+
+      .ongoingCard {
+        width: 100%;
+        aspect-ratio: 7.2/1;
+        background: #fff;
+        border-top: 1px solid mo.$line-ddd;
+        border-bottom: 1px solid mo.$line-ddd;
+        padding: 30px 40px;
+        @include mo.flex(space-between, center, 0);
+
+        &:last-child {
+          border-top: none;
+        }
+
+        .img-box {
+          width: 14rem;
+          height: 14rem;
+          cursor: pointer;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .text-box {
+          flex: 1;
+          height: 14rem;
+          padding: 30px;
+          @include mo.flex(space-between, center, 60px);
+
+          .productOption {
+            @include mo.font(1.6rem, 400, mo.$text-666);
+            @include mo.flex(center, flex-start, 0);
+            flex-direction: column;
+            width: 100%;
+            max-width: 454px;
+
+            .productName {
+              margin-bottom: 12px;
+              @include mo.font(2.2rem, 500, mo.$base);
+            }
+
+            .size {
+              margin-bottom: 6px;
+            }
+          }
+
+          > p {
+            @include mo.font(1.8rem, 400, mo.$text-666);
+          }
+
+          .orderState {
+            @include mo.font(1.8rem, 500, mo.$base);
+          }
+        }
+      }
+    }
+  }
+
+  .recentOrder {
+    margin-bottom: 80px;
+
+    .title-wrap {
+      @include mo.flex(flex-start, center, 20px);
+      margin-bottom: 30px;
+
+      h2 {
+        @include mo.font(3.2rem, 500, mo.$base);
+      }
+
+      p {
+        @include mo.font(1.8rem, 400, mo.$text-333);
+      }
+    }
+  }
+}

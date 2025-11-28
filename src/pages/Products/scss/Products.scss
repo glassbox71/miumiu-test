@@ -1,0 +1,19 @@
+@use '../../../App.scss' as pd;
+
+h2 {
+  @include pd.font(2.2rem, 500, pd.$base);
+  text-align: center;
+  margin: 0 auto;
+}
+.product-page {
+  max-width: 2400px;
+  margin: 0 auto;
+  padding-top: 80px;
+  h2 {
+    @include pd.font(2.2rem, 500, pd.$base);
+    text-align: center;
+    line-height: 140%;
+    margin-top: 80px;
+    margin-bottom: 5rem;
+  }
+}

@@ -1,0 +1,270 @@
+@use '../../../App.scss' as msg;
+
+.Chatbot {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  @include msg.flex(flex-end, flex-end, 1.6rem);
+  flex-direction: column;
+  gap: 16px;
+
+  //GO-UP
+  .up-btn {
+    width: 50px;
+    aspect-ratio: 1/1;
+    background-image: url('../../../../public/assets/icon/go-up.png');
+    cursor: pointer;
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  //TODO chatBot
+  .chatbot-toggle-btn {
+    background-image: url('../../../../public/assets/icon/message.png');
+    width: 50px;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  //TODO chatBot
+  .chatbot-wrap {
+    width: 384px;
+    height: 600px;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      border-bottom: 1px solid #e5e7eb;
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .chatbot-logo {
+          width: 88px;
+          aspect-ratio: 88/18;
+        }
+        .icon {
+          width: 18px;
+          height: 18px;
+          aspect-ratio: 1/1;
+        }
+      }
+
+      .header-right {
+        display: flex;
+        gap: 8px;
+
+        .header-btn {
+          padding: 4px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          border-radius: 4px;
+          transition: background-color 0.2s;
+
+          &:first-child {
+            background: url(../../../../public/assets/icon/reset.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 1.8rem;
+            aspect-ratio: 1/1;
+          }
+
+          &:nth-child(2) {
+            background: url(../../../../public/assets/icon/close.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 1.8rem;
+            aspect-ratio: 1/1;
+          }
+
+          &.header-btn:hover {
+            background-color: #f3f4f6;
+          }
+        }
+      }
+    }
+
+    .messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+
+      .message-wrapper {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+
+      .message-wrapper.user {
+        justify-content: flex-end;
+      }
+
+      .message-group {
+        margin-bottom: 16px;
+      }
+
+      .message-avatar {
+        width: 40px;
+        height: 40px;
+        background-color: #000;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .message-content {
+        max-width: 280px;
+      }
+
+      .message-content.user {
+        text-align: right;
+      }
+
+      .sender {
+        font-weight: 600;
+        margin-bottom: 4px;
+        font-size: 14px;
+      }
+
+      // = = 체크 = =
+      .message-bubble {
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 10px;
+        white-space: pre-line;
+      }
+
+      .message-bubble.bot {
+        background-color: #f3f4f6;
+        line-height: 140%;
+      }
+
+      .message-bubble.user {
+        background-color: #000;
+        color: white;
+        line-height: 1;
+      }
+
+      .time {
+        font-size: 12px;
+        color: #6b7280;
+        margin-top: 4px;
+      }
+
+      .cs-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .cs-button {
+        padding: 8px 16px;
+        border: 1px solid #d1d5db;
+        border-radius: 20px;
+        background: white;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+          background-color: #f9fafb;
+        }
+      }
+
+      .action-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 12px;
+
+        .action-button {
+          padding: 8px 16px;
+          border: 1px solid #d1d5db;
+          border-radius: 20px;
+          background: white;
+          font-size: 14px;
+          cursor: pointer;
+          text-align: left;
+          transition: all 0.2s;
+          width: fit-content;
+
+          &:hover {
+            background-color: #f9fafb;
+          }
+
+          // "전 단계로 가기" 버튼 스타일
+          &.back-button {
+            background-color: #f3f4f6;
+            color: #6b7280;
+            font-weight: 500;
+
+            &:hover {
+              background-color: #e5e7eb;
+            }
+          }
+        }
+      }
+    }
+
+    .input-wrapper {
+      padding: 16px;
+      border-top: 1px solid #e5e7eb;
+
+      .chatbot-input-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #f3f4f6;
+        border-radius: 24px;
+        padding: 8px 16px;
+      }
+
+      .chatbot-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 14px;
+      }
+
+      .chatbot-send-btn {
+        background: none;
+        border: none;
+        color: #6b7280;
+        cursor: pointer;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+        transition: color 0.2s;
+      }
+
+      .chatbot-send-btn:hover {
+        color: #000;
+      }
+    }
+  }
+}

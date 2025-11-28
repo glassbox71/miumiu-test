@@ -1,0 +1,141 @@
+@use '../../../App.scss' as header;
+
+header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 2400px;
+  margin: 0 auto;
+  padding: 2.8rem 4rem;
+  background-color: #00000000;
+  z-index: 999;
+  &.black {
+    background-color: header.$base;
+    animation: headerBg 1s ease-in-out;
+    animation-fill-mode: forwards;
+
+    .logo {
+      animation: LogoFix 0.6s;
+      animation-fill-mode: forwards;
+    }
+  }
+  .header-wrap {
+    @include header.flex(space-between, center, 0);
+    position: relative;
+    z-index: 20;
+
+    .menu {
+      @include header.flex(center, center, 0);
+      aspect-ratio: 1/1;
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+    .logo {
+      position: absolute;
+      width: 20%;
+      aspect-ratio: 150/24;
+      top: 50vh;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .sub_logo {
+      position: absolute;
+      width: 8%;
+      aspect-ratio: 150/24;
+      top: 14px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .header-right {
+      .Icon {
+        width: 2.4rem;
+        aspect-ratio: 1/1;
+        padding: 4px;
+      }
+      .gnb-list {
+        @include header.flex(start, start, 3rem);
+
+        .user {
+          padding: 0;
+          position: relative;
+          height: 100%;
+          .user-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            @include header.flex(center, center, 0);
+          }
+          .user-dropdown-menu {
+            position: absolute;
+            /* 아이콘의 밑바닥(100%) + 헤더의 아래쪽 패딩(2.8rem) 만큼 내림*/
+            top: calc(100% + 2.8rem);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 21.2rem;
+            height: 19.2rem;
+            background-color: header.$base;
+            border-radius: 0 0 0.4rem 0.4rem;
+            padding: 0;
+            z-index: 10;
+            ul {
+              width: 100%;
+              height: 100%;
+              li {
+                height: 25%;
+                a {
+                  display: flex;
+                  padding: 0 2rem;
+                  color: #fff;
+                  font-size: 1.4rem;
+                  width: 100%;
+                  height: 100%;
+                  text-align: left;
+                  align-items: center;
+                  white-space: nowrap;
+                  &:hover {
+                    background-color: header.$text-333;
+                  }
+                }
+                &:last-child {
+                  > a {
+                    color: header.$text-bbb;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .cart {
+          position: relative;
+          .cart-count {
+            position: absolute;
+            left: 40%;
+            top: 0;
+            display: block;
+            background: #fff;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            font-size: 12px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

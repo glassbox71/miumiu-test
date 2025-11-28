@@ -1,0 +1,137 @@
+@use '../../../App.scss' as ct;
+
+.CartTotalPrice {
+  width: 30%;
+  flex-grow: 1;
+  padding: 0px 30px 60px 30px;
+  position: fixed;
+  right: 0;
+  top: 80px;
+  height: calc(100vh - 80px);
+  z-index: 998;
+
+  b {
+    @include ct.font(2.2rem, 600, ct.$base);
+  }
+
+  .price-info {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-bottom: 1px solid ct.$text-bbb;
+
+    .list {
+      @include ct.flex(space-between, stretch, 0);
+
+      p {
+        @include ct.font(1.8rem, 400, ct.$base);
+
+        span.addTax {
+          @include ct.font(1.6rem, 400, ct.$text-666);
+        }
+      }
+      span {
+        @include ct.font(1.8rem, 400, ct.$text-666);
+      }
+      &:nth-child(2) {
+        span {
+          @include ct.font(1.8rem, 400, ct.$base);
+        }
+      }
+    }
+  }
+
+  .total-price-wrap {
+    margin: 30px 0;
+    @include ct.flex(space-between, center, 0);
+
+    p {
+      @include ct.font(2.2rem, 600, ct.$base);
+      @include ct.flex(start, center, 4px);
+
+      span {
+        @include ct.font(1.6rem, 400, ct.$text-666);
+        line-height: 1;
+      }
+    }
+
+    .total-price {
+      @include ct.font(2.6rem, 600, ct.$text-blue);
+
+      > span {
+        @include ct.font(2.6rem, 600, ct.$base);
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+    aspect-ratio: 652/60;
+    @include ct.font(1.6rem, 600, #fff);
+    line-height: 1;
+    @include ct.flex(center, center, 0);
+    background-color: ct.$base;
+    border: 1px solid ct.$base;
+
+    &:hover {
+      background: ct.$text-333;
+    }
+  }
+
+  .accordion-wrap {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+    .accordion-list {
+      height: calc(100vh - 500px);
+      overflow-y: auto;
+      overflow-x: hidden;
+      overscroll-behavior: contain;
+    }
+
+    details {
+      summary {
+        padding: 28px 0;
+        list-style: none;
+        cursor: pointer;
+        position: relative;
+        border-bottom: 1px solid ct.$line;
+        @include ct.font(1.8rem, 500, ct.$base);
+
+        &::after {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 24px;
+          aspect-ratio: 1/1;
+          background: url(../../../../public/assets/icon/arrow.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          transition: transform 0.2s;
+        }
+        &summary::-webkit-details-marker {
+          display: none; /* 웹킷 브라우저에서 마커 제거 */
+        }
+      }
+
+      .inner {
+        padding: 30px;
+        width: 100%;
+        background-color: ct.$line-f4;
+        @include ct.font(1.6rem, 400, ct.$text-333);
+        line-height: 140%;
+      }
+    }
+    details[open] {
+      summary::after {
+        transform: translateY(-50%) rotate(-180deg);
+      }
+    }
+  }
+}

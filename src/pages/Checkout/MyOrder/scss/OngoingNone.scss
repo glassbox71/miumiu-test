@@ -1,0 +1,12 @@
+@use '../../../../App.scss' as on;
+
+.ongoingNone {
+  width: 100%;
+  aspect-ratio: 7.2/1;
+  background: #fff;
+  border-top: 1px solid on.$line-ddd;
+  border-bottom: 1px solid on.$line-ddd;
+  padding: 30px 40px;
+  @include on.flex(center, center, 0);
+  @include on.font(2rem, 500, on.$base);
+}

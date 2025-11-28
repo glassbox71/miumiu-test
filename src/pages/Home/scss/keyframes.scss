@@ -1,0 +1,77 @@
+@use '../../../App.scss' as main;
+
+@keyframes disPlay {
+  100% {
+    display: none;
+  }
+}
+
+//TODO 미우미우 텍스트 라인 베너
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes bannerScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes bannerScrollY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes bannerScrollReturnY {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+@keyframes LogoFix {
+  0% {
+    top: 50vh;
+    width: 20%;
+  }
+  100% {
+    top: 14px;
+    width: 8%;
+  }
+}
+
+@keyframes headerBg {
+  0% {
+    background-color: #00000000;
+  }
+
+  100% {
+    background-color: main.$base;
+  }
+}
+
+//TODO 스켈레톤 키프레임
+@keyframes shine {
+  0% {
+    /* 초기 상태: 그라데이션이 왼쪽 -100% 위치에서 시작 */
+    background-position: 110% 0; /* 시작 위치 조정 */
+  }
+  100% {
+    /* 최종 상태: 그라데이션이 오른쪽 +100% 위치로 이동 */
+    background-position: -110% 0; /* 끝 위치 조정 */
+  }
+}

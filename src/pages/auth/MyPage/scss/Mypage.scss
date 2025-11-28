@@ -1,0 +1,211 @@
+@use '../../../../App.scss' as mp;
+
+.myPage {
+  margin-bottom: 15rem;
+  .container {
+    width: 1440px;
+    margin: 0 auto;
+
+    .basicInfo {
+      margin-bottom: 80px;
+      .basicInfo-inner {
+        .title-wrap {
+          @include mp.flex(space-between, center, auto);
+          margin-bottom: 30px;
+
+          h2 {
+            @include mp.font(3.2rem, 500, mp.$base);
+          }
+
+          button {
+            @include mp.font(1.4rem, 500, mp.$base);
+            padding: 10px 16px;
+            border: 1px solid mp.$base;
+            background-color: #fff;
+
+            &:hover {
+              background: mp.$line-f4;
+            }
+          }
+        }
+
+        .info-table {
+          width: 100%;
+          border-collapse: collapse;
+          table-layout: fixed;
+          border-top: 1px solid mp.$line-ddd;
+          color: mp.$base;
+          border-bottom: 1px solid mp.$line-ddd;
+
+          tr {
+            border-bottom: 1px solid mp.$line-ddd;
+            height: 6rem;
+            @include mp.font(1.8rem, 400, mp.$base);
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+
+          th {
+            background-color: mp.$line-f4;
+            @include mp.font(1.6rem, 400, mp.$text-666);
+            text-align: left;
+            padding-left: 30px;
+            border-right: 1px solid mp.$line-ddd;
+            width: 17%;
+          }
+
+          td {
+            background-color: #fff;
+            font-size: 1.6rem;
+            font-weight: 400;
+            text-align: left;
+            padding-left: 30px;
+
+            border-right: 1px solid mp.$line-ddd;
+
+            &:last-child {
+              border-right: none;
+            }
+          }
+
+          tr:last-child {
+            td {
+              width: 75%;
+              border-right: none;
+            }
+
+            th {
+              width: 25%;
+            }
+          }
+        }
+      }
+    }
+
+    .loginInfo {
+      margin-bottom: 80px;
+      .loginInfo-inner {
+        h2 {
+          @include mp.font(3.2rem, 500, mp.$base);
+          margin-bottom: 30px;
+        }
+
+        .login-table {
+          width: 100%;
+          border-collapse: collapse;
+          table-layout: fixed;
+          border-top: 1px solid mp.$line-ddd;
+          color: mp.$base;
+          border-bottom: 1px solid mp.$line-ddd;
+
+          tr {
+            border-bottom: 1px solid mp.$line-ddd;
+            height: 6rem;
+            @include mp.font(1.8rem, 400, mp.$base);
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+
+          th {
+            background-color: mp.$line-f4;
+            @include mp.font(1.6rem, 400, mp.$text-666);
+            text-align: left;
+            padding-left: 30px;
+            border-right: 1px solid mp.$line-ddd;
+            width: 17%;
+          }
+
+          td {
+            background-color: #fff;
+            @include mp.font(1.6rem, 400, mp.$base);
+            text-align: left;
+            padding-left: 30px;
+            border-right: 1px solid mp.$line-ddd;
+
+            &:last-child {
+              border-right: none;
+            }
+          }
+
+          tr:last-child {
+            td {
+              width: 75%;
+              border-right: none;
+            }
+
+            th {
+              width: 25%;
+            }
+          }
+        }
+      }
+    }
+
+    .myCoupon {
+      margin-bottom: 80px;
+      .myCoupon-inner {
+        h2 {
+          @include mp.font(3.2rem, 500, mp.$base);
+          margin-bottom: 30px;
+        }
+
+        .coupon-wrap {
+          @include mp.flex(space-between, center, 20px);
+          width: 100%;
+
+          .coupon-box {
+            flex: 1;
+            aspect-ratio: 5/1;
+            max-width: 710px;
+            border: 1px solid mp.$line;
+            padding: 30px;
+            @include mp.flex(center, flex-start, 0);
+            flex-direction: column;
+
+            .title {
+              @include mp.font(1.8rem, 500, mp.$base);
+              margin-bottom: 12px;
+            }
+
+            .coupon-detail {
+              span {
+                @include mp.font(1.6rem, 400, mp.$text-666);
+                @include mp.flex(center, flex-start, 6px);
+                flex-direction: column;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .deliveryAddress {
+      margin-bottom: 80px;
+      .address-inner {
+        .title-wrap {
+          @include mp.flex(space-between, center, auto);
+          margin-bottom: 30px;
+
+          h2 {
+            @include mp.font(3.2rem, 500, mp.$base);
+          }
+
+          button {
+            @include mp.font(1.4rem, 500, mp.$base);
+            padding: 10px 16px;
+            border: 1px solid mp.$base;
+            background-color: #fff;
+
+            &:hover {
+              background: mp.$line-f4;
+            }
+          }
+        }
+      }
+    }
+  }
+}

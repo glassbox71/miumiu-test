@@ -1,0 +1,91 @@
+@use '../../../App.scss' as wish;
+
+.WishList {
+  .WishList-inner {
+    width: 1440px;
+    border-bottom: 1px solid wish.$text-bbb;
+    .WishList-wrap {
+      > h2 {
+        @include wish.font(3.2rem, 500, wish.$base);
+        margin-bottom: 3rem;
+      }
+      .WishList-items {
+        border-top: 1px solid wish.$text-bbb;
+        .wish-empty {
+          text-align: center;
+
+          > h2 {
+            margin-top: 8rem;
+            @include wish.font(2rem, 500, wish.$base);
+          }
+          > p {
+            margin-top: 1.6rem;
+            @include wish.font(1.6rem, 400, wish.$text-666);
+          }
+          > button {
+            margin: 4rem 0 8rem 0;
+            @include wish.font(1.6rem, 600, wish.$base);
+            border: 1px solid wish.$base;
+            width: 13%;
+            height: 6rem;
+          }
+        }
+        > p {
+          @include wish.font(1.6rem 400 wish.$text-666);
+        }
+        .WishList-item {
+          > li {
+            margin: 2rem 0 2rem 0;
+            @include wish.flex(space-between, stretch, 0);
+            .img {
+              width: 18%;
+              aspect-ratio: 1/1;
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+              }
+            }
+            .wish-info {
+              width: 100%;
+              @include wish.flex(space-between, flex-start, 0);
+              padding: 4rem 5rem;
+              .wish-info-left {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                .wishId {
+                  @include wish.font(1.4rem, 400, wish.$text-666);
+                }
+                .wishName {
+                  @include wish.font(2.2rem, 500, wish.$base);
+                }
+                .wishCount {
+                  @include wish.font(1.6rem, 400, wish.$text-666);
+                }
+              }
+              .wish-info-right {
+                @include wish.flex(null, flex-end, 12rem);
+                flex-direction: column;
+
+                .wish-icon {
+                  display: flex;
+                  gap: 4rem;
+                  button {
+                    color: black;
+                    width: 2.4rem;
+                    aspect-ratio: 1/1;
+                  }
+                }
+                .wishPrice {
+                  @include wish.font(2.6rem, 600, wish.$base);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

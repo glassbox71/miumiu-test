@@ -1,0 +1,57 @@
+@use '../../../App.scss' as pd;
+
+.ProductShoesSize {
+  padding-top: 160px;
+  width: 55%;
+  margin: 0 auto;
+
+  .shoesSize {
+    width: 100%;
+    aspect-ratio: 560/740;
+
+    li {
+      @include pd.flex(center, center, 0);
+      @include pd.font(1.4rem, 400, pd.$text-333);
+      border-bottom: 1px solid pd.$line;
+
+      &:nth-child(2n) {
+        background-color: pd.$line-f4;
+      }
+      div {
+        width: 33%;
+        min-width: 186px;
+        text-align: center;
+        padding: 12px 16px;
+
+        &.first,
+        &.second {
+          border-right: 1px solid pd.$line;
+        }
+      }
+
+      &.th {
+        @include pd.font(1.4rem, 500, pd.$text-333);
+        text-wrap: nowrap;
+        border-top: 1px solid pd.$line;
+      }
+    }
+  }
+
+  .footSize {
+    h3 {
+      @include pd.font(2.2rem, 500, pd.$base);
+      text-align: center;
+    }
+    .sub-title {
+      @include pd.font(1.4rem, 400, pd.$text-333);
+      text-align: center;
+      margin-top: 30px;
+      margin-bottom: 80px;
+    }
+
+    img {
+      border-bottom: 1px solid;
+      margin: 0 auto;
+    }
+  }
+}

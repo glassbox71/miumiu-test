@@ -1,0 +1,43 @@
+@use '../../../../App.scss' as op;
+
+.ongoingProcess {
+  width: 100%;
+  aspect-ratio: 7.2/1;
+  background: op.$line-f4;
+  padding: 0 40px;
+  @include op.flex(space-between, center, 20px);
+
+  .payment-status,
+  .delivery-prepare,
+  .delivery-status,
+  .delivery-completed {
+    flex: 1;
+    text-align: center;
+
+    span {
+      @include op.font(4.8rem, 600, op.$base);
+    }
+
+    p {
+      @include op.font(1.8rem, 500, op.$text-333);
+      margin-bottom: 12px;
+    }
+  }
+
+  .payment-status,
+  .delivery-status {
+    > span {
+      color: #007bff;
+    }
+  }
+
+  .next-icon {
+    width: 2.4rem;
+    aspect-ratio: 24/20;
+    // background: url('../../../../../src/assets/icon/arrow-right.png');
+    background: url('../../../../../public/assets/icon/arrow.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}

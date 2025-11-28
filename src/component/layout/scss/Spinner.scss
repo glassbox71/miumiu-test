@@ -1,0 +1,39 @@
+.Spinner-wrap {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  background-color: #ffffffaf;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.logo-container-2 {
+  position: relative;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.simple-logo {
+  display: block;
+  width: 270px;
+  height: 44px;
+
+  // 빛 반사 애니메이션
+  .shine-rect {
+    animation: shine-effect 3s ease-in-out infinite;
+  }
+}
+
+@keyframes shine-effect {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+  100% {
+    transform: translateX(300%) translateY(200%);
+  }
+}

@@ -1,0 +1,69 @@
+@use '../../../App.scss' as pd;
+
+.ProductSkeleton-wrap {
+  padding-top: 80px;
+  margin-top: 60px;
+  .top {
+    @include pd.flex(space-between, center, 4%);
+
+    .left {
+      width: 55%;
+      aspect-ratio: 1/1;
+      background-color: pd.$skeleton;
+    }
+
+    .rigth {
+      flex-grow: 1;
+
+      .box1 {
+        width: 80%;
+        aspect-ratio: 566/21;
+        background-color: pd.$skeleton;
+      }
+
+      .box2 {
+        margin-top: 30px;
+        width: 100%;
+        aspect-ratio: 566/50;
+        background-color: pd.$skeleton;
+      }
+
+      .box3 {
+        margin-top: 16px;
+        width: 50%;
+        aspect-ratio: 120/24;
+        background-color: pd.$skeleton;
+      }
+
+      .box4 {
+        margin-top: 40px;
+        aspect-ratio: 567/76;
+        width: 100%;
+        background-color: pd.$skeleton;
+      }
+
+      .box5 {
+        margin-top: 10px;
+        aspect-ratio: 567/76;
+        width: 100%;
+        background-color: pd.$skeleton;
+      }
+    }
+  }
+
+  .bottom {
+    .nav {
+      margin-top: 140px;
+      width: 100%;
+      aspect-ratio: 1440/80;
+      background-color: pd.$skeleton;
+    }
+
+    .img {
+      width: 64%;
+      aspect-ratio: 1/1;
+      background-color: pd.$skeleton;
+      margin: 80px auto;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@use '../../../App.scss' as join;
+
+.join-wrap {
+  width: 100%;
+  height: 100vh;
+  @include join.flex(end, start, 0);
+  background: url('../../../../public/assets/images/static/login_bg.jpg');
+
+  .join-container {
+    width: 35%;
+    height: 100%;
+    @include join.flex(center, center, 0);
+    flex-direction: column;
+    background-color: #ffffff;
+    margin-right: 14%;
+    overflow: hidden;
+    min-width: 600px;
+    .join-inner {
+      width: 74%;
+      margin-top: 120px;
+      margin-bottom: 60px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      .email-input {
+        display: flex;
+        flex-direction: column;
+      }
+      .phone-input {
+        width: 100%;
+      }
+      .nation-input {
+        input {
+          width: 100%;
+          border: 1px solid join.$line;
+          border-radius: 4px;
+          padding: 16px 40px 16px 16px;
+          @include join.font(1.4rem, 400, join.$base);
+
+          &::placeholder {
+            @include join.font(1.4rem, 400, join.$text-666);
+          }
+
+          &:focus::placeholder {
+            color: join.$text-bbb;
+          }
+        }
+      }
+    }
+  }
+}

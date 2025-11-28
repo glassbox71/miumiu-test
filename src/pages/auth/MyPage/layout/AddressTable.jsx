@@ -1,0 +1,43 @@
+import React, { useState } from 'react';
+import '../scss/AddressTable.scss';
+import AddressEditModal from './AddressEditModal';
+
+//TODO 마이페이지  배송지 리스트
+const AddressTable = ({ userData }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const openaddressModal = () => {
+    setIsOpen(true);
+  };
+  const closeaddressModal = () => {
+    setIsOpen(false);
+  };
+
+  return (
+    <table className="address-table">
+      <tbody>
+        <tr>
+          <th>이름</th>
+          <th>휴대폰 번호</th>
+          <th>주소</th>
+        </tr>
+
+        <tr>
+          <td>{userData.fullName}</td>
+          <td>{userData.phone}</td>
+          <td>
+            <span>부산 사하구 감내1로 7-1 (감천동) 103동 1302호</span>
+            <div>
+              <button className="editBtn" onClick={openaddressModal}>
+                수정
+              </button>
+              <button className="deleteBtn">삭제</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      {isOpen && <AddressEditModal onclose={closeaddressModal} userData={userData} />}
+    </table>
+  );
+};
+
+export default AddressTable;

@@ -1,0 +1,55 @@
+@use '../../../App.scss' as ct;
+
+footer {
+  display: none;
+}
+
+.Cart {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  max-width: 2400px;
+  margin-top: 80px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+
+  .left-wrap {
+    flex: 0 0 70%;
+    padding: 40px 60px;
+
+    .top {
+      h2 {
+        @include ct.font(2.2rem, 600, ct.$base);
+        text-align: start;
+        span {
+          @include ct.font(1.6rem, 400, ct.$text-666);
+        }
+      }
+    }
+    .cart-empty {
+      background-color: #fff;
+      height: 500px;
+      @include ct.flex(center, center, 0);
+      flex-direction: column;
+
+      > h3 {
+        margin-top: 8rem;
+        @include ct.font(2rem, 500, ct.$base);
+      }
+      > p {
+        margin-top: 1.6rem;
+        @include ct.font(1.6rem, 400, ct.$text-666);
+      }
+      > button {
+        margin: 4rem 0 8rem 0;
+        @include ct.font(1.6rem, 600, ct.$base);
+        border: 1px solid ct.$base;
+        width: 13%;
+        height: 6rem;
+      }
+    }
+    .cart-items {
+      margin-top: 30px;
+    }
+  }
+}

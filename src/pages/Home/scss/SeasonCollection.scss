@@ -1,0 +1,61 @@
+@use '../../../App.scss' as main;
+@use './keyframes.scss' as line;
+
+.SeasonCollection {
+  background-color: #400c2b;
+  display: flex;
+  flex-direction: column;
+  padding: 150px 0;
+  overflow: hidden;
+
+  .inner {
+    @include main.flex(space-between, start, 0);
+
+    .left-container {
+      flex-grow: 1;
+      span {
+        @include main.font(1.8rem, 400, #fff);
+        user-select: none;
+      }
+
+      h2 {
+        font-family: 'Libre Baskerville';
+        @include main.font(4rem, 700, #fff);
+        text-transform: uppercase;
+        margin-top: 40px;
+        user-select: none;
+        text-align: start;
+      }
+    }
+    .right-container {
+      width: 42%;
+      aspect-ratio: 800/500;
+    }
+  }
+
+  .bottomSection {
+    margin-top: 80px;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid;
+
+    .item-container {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      animation: bannerScroll 20s linear infinite;
+      touch-action: pan-x;
+      -webkit-overflow-scrolling: touch;
+
+      &.paused {
+        animation-play-state: paused;
+      }
+
+      li {
+        min-width: 330px;
+        width: 17%;
+        aspect-ratio: 330/200;
+      }
+    }
+  }
+}

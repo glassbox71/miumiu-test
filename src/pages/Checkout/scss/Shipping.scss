@@ -1,0 +1,255 @@
+@use '../../../App.scss' as sh;
+
+.Shipping-wrap {
+  display: flex;
+  width: 100%;
+  margin-top: 80px;
+  background-color: #f5f5f5;
+
+  p {
+    padding-bottom: 8px;
+  }
+
+  h4 {
+    @include sh.font(1.8rem, 600, sh.$base);
+    padding-bottom: 30px;
+  }
+
+  span {
+    @include sh.font(1.4rem, 400, sh.$text-333);
+  }
+
+  option {
+    @include sh.font(1.4rem, 400, sh.$text-333);
+    padding: 0 20px;
+  }
+}
+
+.shipping-left {
+  flex: 0 0 70%;
+  padding: 40px 60px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  p {
+    @include sh.font(2.2rem, 500, sh.$base);
+  }
+
+  ul {
+    display: flex;
+
+    li:first-child {
+      @include sh.font(1.8rem, 500, sh.$base);
+    }
+
+    li:nth-child(2),
+    li:last-child {
+      @include sh.font(1.8rem, 500, sh.$text-bbb);
+    }
+  }
+}
+
+.tab-menu {
+  display: flex;
+
+  button {
+    @include sh.font(1.6rem, 400, sh.$text-888);
+    width: 50%;
+    padding: 20px 16px;
+    text-align: center;
+    background-color: #e4e4e4;
+  }
+
+  .active {
+    background: #fff;
+    color: sh.$base;
+  }
+}
+
+.input-left {
+  padding: 40px;
+  background-color: #fff;
+
+  .user-email {
+    margin-bottom: 80px;
+
+    span {
+      display: block;
+      padding-top: 12px;
+    }
+  }
+
+  .letter-check {
+    label {
+      display: flex;
+      align-items: center;
+      input {
+        width: 2rem;
+        height: 2rem;
+        accent-color: sh.$base;
+        margin-right: 1.2rem;
+        pointer-events: auto;
+        appearance: auto;
+        -webkit-appearance: auto;
+        margin-top: 12px;
+      }
+
+      span {
+        color: sh.$base;
+      }
+    }
+  }
+
+  .user-address {
+    margin-bottom: 80px;
+
+    p {
+      @include sh.font(1.2rem, 400, sh.$base);
+    }
+
+    .base-input {
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+
+    .name-wrap {
+      gap: 1.5%;
+
+      .input-box {
+        width: 50%;
+      }
+    }
+
+    .postcode-modal {
+      width: 100%;
+      border-radius: 4px;
+    }
+
+    .country-phon {
+      display: flex;
+      gap: 1.5%;
+
+      div {
+        width: 50%;
+      }
+
+      .country {
+        @include sh.font(1.4rem, 400, sh.$text-666);
+        input {
+          border-radius: 4px;
+          border: 0.5px solid sh.$line;
+          padding: 16px;
+          background-color: sh.$line-f4;
+        }
+      }
+
+      .select-num {
+        display: flex;
+        width: 100%;
+        gap: 1%;
+
+        select {
+          @include sh.font(1.4rem, 400, sh.$base);
+          padding: 16px 0 16px 16px;
+          border-radius: 4px;
+          border: 0.5px solid sh.$line;
+          appearance: none;
+          -webkit-appearance: none;
+          background-image: url(../../../../public/assets/icon/arrow.png);
+          background-repeat: no-repeat;
+          background-position: right 16px center;
+          background-size: 12px;
+          padding-right: 40px;
+        }
+
+        input {
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  .radio-check {
+    margin-bottom: 80px;
+    h4 {
+      padding-bottom: 20px;
+    }
+    span {
+      display: block;
+      padding-bottom: 20px;
+    }
+    .radio-list {
+      display: flex;
+      gap: 20px;
+    }
+    .radio-card {
+      border: 1px solid sh.$line;
+      width: 50%;
+
+      // &:hover {
+      //   border: 1px solid sh.$base;
+      // }
+
+      &.active {
+        border: 1px solid sh.$base;
+      }
+
+      .cardLabel {
+        display: flex;
+        gap: 16px;
+        flex: 1;
+        padding: 30px;
+      }
+
+      input {
+        width: 2rem;
+        height: 2rem;
+        accent-color: sh.$base;
+        margin-right: 1.2rem;
+        pointer-events: auto;
+        appearance: auto;
+        -webkit-appearance: auto;
+      }
+
+      .text-box {
+        span {
+          @include sh.font(1.8rem, 500, sh.$base);
+          display: block;
+          padding-bottom: 12px;
+        }
+
+        .info {
+          @include sh.font(1.6rem, 400, sh.$text-666);
+          padding-bottom: 6px;
+          word-break: break-all;
+        }
+      }
+    }
+    .coupon-top {
+      @include sh.font(1.4rem, 400, sh.$text-666);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+  }
+
+  .detailAddress {
+    margin-top: 30px;
+  }
+
+  .miu-btn {
+    aspect-ratio: 1008/60;
+    width: 100%;
+    background-color: sh.$base;
+    color: #fff;
+
+    &:hover {
+      background: sh.$text-333;
+    }
+  }
+}

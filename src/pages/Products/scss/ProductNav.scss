@@ -1,0 +1,75 @@
+@use '../../../App.scss' as pd;
+
+.ProductNav {
+  background-color: #fff;
+  margin-bottom: 80px;
+  padding: 20px 0;
+  position: sticky;
+  top: 80px;
+  z-index: 998;
+  border-bottom: 1px solid pd.$line-ddd;
+
+  .nav-inner {
+    width: 1440px;
+    @include pd.flex(space-between, center, auto);
+    margin: 0 auto;
+
+    .cate2-list {
+      @include pd.flex(center, center, 55px);
+    }
+
+    .button-wrap button {
+      @include pd.font(1.4rem, 500, pd.$base);
+      border: 1px solid pd.$base;
+      padding: 10px 16px;
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 10px;
+
+    li {
+      @include pd.font(1.6rem, 400, pd.$base);
+      cursor: pointer;
+
+      a {
+        padding: 27px 20px;
+
+        &:active {
+          border-bottom: 3px solid pd.$base;
+        }
+      }
+    }
+  }
+
+  .nav-button-wrap {
+    @include pd.flex(center, center, 10px);
+
+    .miu-btn {
+      &:nth-child(1) {
+        @include pd.font(1.4rem, 500, pd.$base);
+        aspect-ratio: 212 / 38;
+        border: 1px solid pd.$base;
+        background-color: #fff;
+        padding: 10px 16px;
+
+        &:hover {
+          background: pd.$line-f4;
+        }
+      }
+
+      &:nth-child(2) {
+        @include pd.font(1.4rem, 500, #fff);
+        aspect-ratio: 81 / 38;
+        border: 1px solid pd.$base;
+        background-color: pd.$base;
+        padding: 10px 16px;
+
+        &:hover {
+          background: pd.$text-333;
+        }
+      }
+    }
+  }
+}
