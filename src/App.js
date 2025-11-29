@@ -106,6 +106,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+
         {/* auth */}
         <Route path="/login" element={<Login />} />
         <Route path="/join" element={<Join />} />
@@ -120,13 +121,17 @@ function App() {
           path="/myOrder"
           element={<Navigate to="/mypage/order" replace />}
         />
+
+        {/* checkout */}
         <Route path="/cart" element={<Cart />} />
         <Route path="/orderComplete/:id" element={<OrderComplete />} />
         <Route path="/orderSummary" element={<OrderSummary />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/shipping" element={<Shipping openModal={openModal} />} />
+
         <Route path="/searchResult" element={<SearchResult />} />
 
+        {/* components test pages */}
         <Route path="/local" element={<Local />} />
         <Route path="/ProductBanner" element={<ProductBanner />} />
         <Route path="/ProductDetailNav" element={<ProductDetailNav />} />
@@ -134,11 +139,14 @@ function App() {
         <Route path="/ProductFilterWrap" element={<ProductFilterWrap />} />
         <Route path="/CartList" element={<CartList />} />
 
- <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/:category1" element={<Category1 />} />
-        <Route path="/:category1/:category2" element={<Category1 />} />
-       
+        {/* product detail */}
+        <Route path="/product/:id" element={<ProductDetail />} />
+
+        {/* 상품 카테고리(접두사 붙임!) */}
+        <Route path="/shop/:category1" element={<Category1 />} />
+        <Route path="/shop/:category1/:category2" element={<Category1 />} />
       </Routes>
+
       <Footer openModal={openModal} />
       <Chatbot />
 
