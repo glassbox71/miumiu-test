@@ -134,9 +134,10 @@ function App() {
         <Route path="/ProductFilterWrap" element={<ProductFilterWrap />} />
         <Route path="/CartList" element={<CartList />} />
 
+ <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/:category1" element={<Category1 />} />
         <Route path="/:category1/:category2" element={<Category1 />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
+       
       </Routes>
       <Footer openModal={openModal} />
       <Chatbot />
