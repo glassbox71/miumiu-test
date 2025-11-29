@@ -3,7 +3,7 @@
 .ProductNav {
   background-color: #fff;
   margin-bottom: 80px;
-  padding: 20px 0;
+  padding: 0px 0;
   position: sticky;
   top: 80px;
   z-index: 998;
@@ -25,18 +25,19 @@
     }
   }
 
-  ul {
+ .cate2-list {
     display: flex;
     gap: 10px;
 
     li {
       @include pd.font(1.6rem, 400, pd.$base);
       cursor: pointer;
+     
 
-      a {
+      button {
         padding: 27px 20px;
 
-        &:active {
+        &.active {
           border-bottom: 3px solid pd.$base;
         }
       }
