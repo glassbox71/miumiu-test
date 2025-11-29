@@ -21,7 +21,7 @@ const LnbSubMenu = ({ categoryKey, isActive, onCloseLnb }) => {
     // console.log(filteredItems, 'filteredItems');
     const shuffled = [...filteredItems].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, 4);
-  },[]);
+   }, [allItems, categoryKey]);
 
   //TODO  LNB 카테고리 대표 사진 가지고 오는 코드;
   const getItemImageSrc = (item) =>

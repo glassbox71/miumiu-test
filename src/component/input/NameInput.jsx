@@ -8,45 +8,43 @@ const NameInput = ({ lastName, name, onLastNameChange, onNameChange }) => {
   const [nameTouch, setNameTouch] = useState(false);
   const koreanRegex = /^[ㄱ-ㅎㅏ-ㅣ가-힣]*$/;
 
-  const validateLastName = () => {
+  useEffect(() => {
+    // validateLastName 함수 내부로 이동
     if (!lastNameTouch) return;
     if (!lastName) {
       setLastNameStatus('failure');
-      return false;
+      return;
     }
     if (!koreanRegex.test(lastName)) {
       setLastNameStatus('failure');
-      return false;
+      return;
     }
     const LastNameFormetRegex = /^[가-힣]{1,2}$/;
     if (LastNameFormetRegex.test(lastName)) {
       setLastNameStatus('success');
-      return true;
     } else {
       setLastNameStatus('failure');
-      return false;
     }
-  };
+  }, [lastName, lastNameTouch]);
 
-  const validateName = () => {
-    if (!nameTouch) return false;
+  useEffect(() => {
+    // validateName 함수 내부로 이동
+    if (!nameTouch) return;
     if (!name) {
       setNameStatus('failure');
-      return false;
+      return;
     }
     if (!koreanRegex.test(name)) {
       setNameStatus('failure');
-      return false;
+      return;
     }
     const NameFormetRegex = /^[가-힣]{1,3}$/;
     if (NameFormetRegex.test(name)) {
       setNameStatus('success');
-      return true;
     } else {
       setNameStatus('failure');
-      return false;
     }
-  };
+  }, [name, nameTouch]);
 
   const handleLastNameChange = (e) => {
     const val = e.target.value;
@@ -63,14 +61,6 @@ const NameInput = ({ lastName, name, onLastNameChange, onNameChange }) => {
       onNameChange(val);
     }
   };
-
-  useEffect(() => {
-    validateLastName();
-  }, [validateLastName]);
-
-  useEffect(() => {
-    validateName();
-  }, [validateName]);
 
   return (
     <div className="base-input">
