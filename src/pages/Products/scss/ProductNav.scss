@@ -1,4 +1,4 @@
-@use '../../../App.scss' as pd;
+@use "../../../App.scss" as pd;
 
 .ProductNav {
   background-color: #fff;
@@ -25,40 +25,38 @@
     }
   }
 
-  .ProductNav{
-    ul{
-       display: flex;
-    gap: 10px;
-    li {
-      @include pd.font(1.6rem, 400, pd.$base);
-      cursor: pointer;
-     
+  .ProductNav {
+    ul {
+      display: flex;
+      gap: 10px;
+      li {
+        @include pd.font(1.6rem, 400, pd.$base);
+        cursor: pointer;
 
-      button {
-        padding: 27px 20px;
+        button {
+          padding: 27px 20px;
 
-        &.active {
-          border-bottom: 3px solid pd.$base;
+          &.active {
+            border-bottom: 3px solid pd.$base;
+          }
+        }
+        a {
+          padding: 27px 20px;
+
+          &.active {
+            border-bottom: 3px solid pd.$base;
+          }
         }
       }
-     a {
-        padding: 27px 20px;
-
-        &.active {
-          border-bottom: 3px solid pd.$base;
-        }
-      }
-    }
     }
   }
- .cate2-list {
+  .cate2-list {
     display: flex;
     gap: 10px;
 
     li {
       @include pd.font(1.6rem, 400, pd.$base);
       cursor: pointer;
-     
 
       button {
         padding: 27px 20px;
@@ -67,7 +65,7 @@
           border-bottom: 3px solid pd.$base;
         }
       }
-     a {
+      a {
         padding: 27px 20px;
 
         &.active {
