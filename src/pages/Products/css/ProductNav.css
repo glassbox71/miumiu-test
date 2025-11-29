@@ -180,6 +180,12 @@ main {
 .ProductNav .cate2-list li button.active {
   border-bottom: 3px solid #000;
 }
+.ProductNav .cate2-list li a {
+  padding: 27px 20px;
+}
+.ProductNav .cate2-list li a.active {
+  border-bottom: 3px solid #000;
+}
 .ProductNav .nav-button-wrap {
   display: flex;
   justify-content: center;

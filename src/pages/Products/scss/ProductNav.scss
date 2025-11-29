@@ -41,6 +41,13 @@
           border-bottom: 3px solid pd.$base;
         }
       }
+     a {
+        padding: 27px 20px;
+
+        &.active {
+          border-bottom: 3px solid pd.$base;
+        }
+      }
     }
   }
 
