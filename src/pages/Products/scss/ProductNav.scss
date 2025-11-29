@@ -10,7 +10,7 @@
   border-bottom: 1px solid pd.$line-ddd;
 
   .nav-inner {
-    width: 1440px;
+    width: 100%;
     @include pd.flex(space-between, center, auto);
     margin: 0 auto;
 

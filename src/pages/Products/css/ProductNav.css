@@ -144,7 +144,7 @@ main {
   border-bottom: 1px solid #ddd;
 }
 .ProductNav .nav-inner {
-  width: 1440px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
