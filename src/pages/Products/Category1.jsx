@@ -121,13 +121,13 @@ const Category1 = () => {
     setIsFilterOpen(false);
   };
 
-  const handleFilterChange = (result) => {
-    if (!result || result.length === 0) {
-      setExtraFilteredList(null);
-    } else {
-      setExtraFilteredList(result);
-    }
-  };
+  // const handleFilterChange = (result) => {
+  //   if (!result || result.length === 0) {
+  //     setExtraFilteredList(null);
+  //   } else {
+  //     setExtraFilteredList(result);
+  //   }
+  // };
 
   const handleOpenFilter = () => setIsFilterOpen(true);
   const handleCloseFilter = () => setIsFilterOpen(false);

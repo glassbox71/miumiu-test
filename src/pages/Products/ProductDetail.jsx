@@ -1,21 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import Button from '../../component/layout/Button';
-import './scss/ProductDetail.scss';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { useProductsStore } from '../../store/useProductsStore';
-import ProductDetailSkeleton from './layout/ProductDetailSkeleton';
-import ProductDetailNav from './layout/ProductDetailNav';
-import ProductShoesSize from './layout/ProductShoesSize';
-import './scss/ProductDetail.scss';
-import CartList from './CartList';
-import { useAuthStore } from '../../api/authStore';
+import React, { useEffect, useState } from "react";
+import Button from "../../component/layout/Button";
+import "./scss/ProductDetail.scss";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useProductsStore } from "../../store/useProductsStore";
+import ProductDetailSkeleton from "./layout/ProductDetailSkeleton";
+import ProductDetailNav from "./layout/ProductDetailNav";
+import ProductShoesSize from "./layout/ProductShoesSize";
+import "./scss/ProductDetail.scss";
+import CartList from "./CartList";
+import { useAuthStore } from "../../api/authStore";
 
 const ProductDetail = () => {
   const { id } = useParams();
 
   // wishList 같이 가져오기 (하트 초기 상태용)
-  const { items, onFetchItems, onAddToCart, onToggleWish, setShowWish, wishList } =
-    useProductsStore();
+  const {
+    items,
+    onFetchItems,
+    onAddToCart,
+    onToggleWish,
+    setShowWish,
+    wishList,
+  } = useProductsStore();
 
   // 상품을 저장하는 변수
   const [product, setProduct] = useState(null);
@@ -23,7 +29,9 @@ const ProductDetail = () => {
   const [mainImage, setMainImage] = useState(null);
   // 연관 아이템
   const [relatedProducts, setRelatedProducts] = useState([]);
-  const [count, setCount] = useState(1);
+  // const [count, setCount] = useState(1);
+  // 수량은 변경 기능 없으므로 상수
+  const count = 1;
   // 장바구니 리스트 팝업
   const [showCartPopup, setShowCartPopup] = useState(false);
   // 로그인 유무
@@ -76,7 +84,7 @@ const ProductDetail = () => {
     }
   }, [product, items]);
 
-  console.log(product, '상세페이지 상품');
+  console.log(product, "상세페이지 상품");
 
   // Shipping 페이지로 연결
   const handleShipping = () => {
@@ -84,13 +92,15 @@ const ProductDetail = () => {
 
     const productCart = {
       ...product,
-      cartImg: product?.detail_images?.[0]?.url || '/assets/images/default-product-image.png',
+      cartImg:
+        product?.detail_images?.[0]?.url ||
+        "/assets/images/default-product-image.png",
       count: 1,
-      price: parseInt(product?.price?.replace(/[^0-9]/g, ''), 10),
+      price: parseInt(product?.price?.replace(/[^0-9]/g, ""), 10),
     };
 
     onAddToCart(productCart);
-    navigate('/shipping');
+    navigate("/shipping");
   };
 
   // 장바구니 팝업 연결
@@ -99,9 +109,11 @@ const ProductDetail = () => {
 
     const productCart = {
       ...product,
-      cartImg: product?.detail_images?.[0]?.url || '/assets/images/default-product-image.png',
+      cartImg:
+        product?.detail_images?.[0]?.url ||
+        "/assets/images/default-product-image.png",
       count: 1,
-      price: parseInt(product?.price?.replace(/[^0-9]/g, ''), 10),
+      price: parseInt(product?.price?.replace(/[^0-9]/g, ""), 10),
     };
 
     onAddToCart(productCart);
@@ -122,7 +134,7 @@ const ProductDetail = () => {
 
       window.scrollTo({
         top: offset,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     } else {
       console.warn(`Target element with id #${targetID} not found.`);
@@ -153,7 +165,9 @@ const ProductDetail = () => {
             <div className="top-left">
               <div className="main-image">
                 {/* mainImage가 있을 때만 렌더링 */}
-                {mainImage && <img src={mainImage} alt={product.name || '상품 이미지'} />}
+                {mainImage && (
+                  <img src={mainImage} alt={product.name || "상품 이미지"} />
+                )}
               </div>
               <ul className="sub-image">
                 {product?.detail_images?.map((el, index) => {
@@ -161,8 +175,15 @@ const ProductDetail = () => {
                   if (!url) return null; // url 없으면 렌더링 안 함
 
                   return (
-                    <li key={index} className={mainImage === url ? 'active' : ''}>
-                      <img src={url} onClick={() => setMainImage(url)} alt={product.name} />
+                    <li
+                      key={index}
+                      className={mainImage === url ? "active" : ""}
+                    >
+                      <img
+                        src={url}
+                        onClick={() => setMainImage(url)}
+                        alt={product.name}
+                      />
                     </li>
                   );
                 })}
@@ -170,11 +191,12 @@ const ProductDetail = () => {
             </div>
             <div className="top-right">
               <p className="title">
-                <span className="tag">{product.tags ? product.tags : ''}</span>
+                <span className="tag">{product.tags ? product.tags : ""}</span>
 
                 <button
-                  className={`wish-icon ${isWished ? 'active' : ''}`}
-                  onClick={handleAddToWish}></button>
+                  className={`wish-icon ${isWished ? "active" : ""}`}
+                  onClick={handleAddToWish}
+                ></button>
               </p>
               <h3>{product.name}</h3>
               <p className="price">{product.price}</p>
@@ -220,7 +242,10 @@ const ProductDetail = () => {
                       )}
 
                       {index === 3 && (
-                        <div className="product-acc-info flex " id="product-size">
+                        <div
+                          className="product-acc-info flex "
+                          id="product-size"
+                        >
                           <div className="info">
                             <h4>사이즈</h4>
                             <ul>
@@ -251,7 +276,7 @@ const ProductDetail = () => {
                   );
                 })}
               </ul>
-              {product.category1 === 'shoes' && <ProductShoesSize />}
+              {product.category1 === "shoes" && <ProductShoesSize />}
             </div>
           </div>
         </div>
@@ -267,7 +292,7 @@ const ProductDetail = () => {
                   src={
                     item.detail_images?.[0]?.url
                       ? item.detail_images[0].url
-                      : '/assets/images/default-product-image.png'
+                      : "/assets/images/default-product-image.png"
                   }
                   alt={item.name}
                 />
@@ -281,7 +306,12 @@ const ProductDetail = () => {
         </ul>
       </section>
 
-      {showCartPopup && <CartList onClose={() => setShowCartPopup(false)} onClick={popUpClose} />}
+      {showCartPopup && (
+        <CartList
+          onClose={() => setShowCartPopup(false)}
+          onClick={popUpClose}
+        />
+      )}
     </>
   );
 };

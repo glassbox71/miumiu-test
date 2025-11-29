@@ -1,8 +1,8 @@
-import React from 'react';
+// import React from 'react';
 import '../scss/couLet.scss';
-import { Link } from 'react-router-dom';
-import Button from '../../../component/layout/Button';
-import EmailInput from '../../../component/input/EmailInput';
+// import { Link } from 'react-router-dom';
+// import Button from '../../../component/layout/Button';
+// import EmailInput from '../../../component/input/EmailInput';
 
 const CousLet = () => {
   return (

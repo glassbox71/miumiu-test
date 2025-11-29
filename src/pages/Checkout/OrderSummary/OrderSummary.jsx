@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../../../component/layout/Button';
 import '../scss/OrderSummary.scss';
 import OrderTotal from '../OrderTotal/OrderTotal';
@@ -49,7 +49,7 @@ const OrderSummary = () => {
         onFinalPrice();
       }
     }
-  }, []);
+  }, [onFinalPrice,onSelectCoupon]);
 
   console.log('배송정보:', shippingData);
 

@@ -66,11 +66,11 @@ const NameInput = ({ lastName, name, onLastNameChange, onNameChange }) => {
 
   useEffect(() => {
     validateLastName();
-  }, [lastName]);
+  }, [validateLastName]);
 
   useEffect(() => {
     validateName();
-  }, [name]);
+  }, [validateName]);
 
   return (
     <div className="base-input">

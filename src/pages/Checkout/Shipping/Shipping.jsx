@@ -9,7 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../../component/layout/Button';
 import RadioCard from '../../../component/input/RadioCard';
 import { store, coupon } from '../../../store/data.js';
-import PointInput from '../../../component/input/PointInput.jsx';
+// import PointInput from '../../../component/input/PointInput.jsx';
 import { useProductsStore } from '../../../store/useProductsStore';
 import { useAuthStore } from '../../../api/authStore.js';
 

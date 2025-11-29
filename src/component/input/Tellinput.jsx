@@ -5,7 +5,7 @@ import { country } from '../../store/data';
 const Tellinput = ({ phone, onPhone, countNum, onCountNum }) => {
   const [phoneCountry, setPhoneCountry] = useState('KR');
   const [phoneNumber, setPhoneNumber] = useState('');
-  const selectedDial = country.find((c) => c.code === phoneCountry)?.dial ?? '+82';
+  // const selectedDial = country.find((c) => c.code === phoneCountry)?.dial ?? '+82';
 
   const handlePhoneNumber = (e) => {
     let onlyNumber = e.target.value.replace(/[^0-9]/g, '');

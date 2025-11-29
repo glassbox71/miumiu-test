@@ -136,7 +136,7 @@ const Search = ({ isOpen, onClose }) => {
     console.log('추천 키워드:', result);
 
     setRecommendKeywords(result);
-  }, [recentTrimmed, items, recentWord]);
+  }, [recentTrimmed, items, recentWord,recentLower]);
 
   console.log(' items[0]:', items && items[0]);
   console.log(' searchWord 상태:', searchWord);

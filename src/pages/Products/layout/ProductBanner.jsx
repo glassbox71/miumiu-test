@@ -3,7 +3,8 @@ import '../scss/ProductBanner.scss';
 import { useParams } from 'react-router-dom';
 
 const ProductBanner = ({ korTitle, bannerTitle }) => {
-  const { category1, category2, tags } = useParams();
+  // const { category1, category2, tags } = useParams();
+    const { category1 } = useParams();
   const [banner, setBanner] = useState('');
 
   let bannerImg = [

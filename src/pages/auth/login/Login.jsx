@@ -21,7 +21,7 @@ const Login = () => {
   //1. 변수
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
-  const { onGoogleLogin, onKakaoLogin, setUser } = useAuthStore();
+  const { onGoogleLogin, setUser } = useAuthStore();
   const navigate = useNavigate();
 
   //1-2 구글 로그인

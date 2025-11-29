@@ -1,6 +1,6 @@
-import React from 'react';
+// import React from 'react';
 import '../scss/MypageNav.scss';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 //TODO 마이페이지 탭 네비
 const MypageNav = ({ activeTab, onChangeTab }) => {

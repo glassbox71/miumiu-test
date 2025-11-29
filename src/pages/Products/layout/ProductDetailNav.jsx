@@ -1,11 +1,11 @@
-import React from 'react';
+// import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Button from '../../../component/layout/Button';
 import '../scss/ProductNav.scss';
 import { useAuthStore } from '../../../api/authStore';
 
 const ProductDetailNav = ({ onScroll, onCart, onShipping }) => {
-  const { user, logout } = useAuthStore();
+  const { user } = useAuthStore();
   const navigate = useNavigate();
 
   const handleNavClick = (e, targetId) => {

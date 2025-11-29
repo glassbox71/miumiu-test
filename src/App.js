@@ -25,7 +25,6 @@ import AllProducts from "./pages/Products/AllProducts";
 import ProductFilterWrap from "./pages/Products/layout/ProductFilterWrap";
 import SearchResult from "./pages/Products/SearchResult";
 import Category1 from "./pages/Products/Category1";
-import Category2 from "./pages/Products/Category2";
 import ScrollToTop from "./ScrollToTop";
 
 import { Chatbot } from "./component/feedback/Chatbot";

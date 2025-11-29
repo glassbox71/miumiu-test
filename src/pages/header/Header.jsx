@@ -78,7 +78,7 @@ const Header = () => {
     } else {
       setScrollY(100);
     }
-  }, [location]);
+  }, [scrollY]);
 
   const isMainPage = location.pathname === '/';
   const headerClass = isMainPage ? (scrollY >= 20 ? 'black' : '') : 'black';
