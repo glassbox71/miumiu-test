@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Button from "../../../component/layout/Button";
 import "../scss/ProductNav.scss";
 import { useAuthStore } from "../../../api/authStore";
+import { useState } from "react";
 
 const ProductDetailNav = ({ onScroll, onCart, onShipping }) => {
   const { user } = useAuthStore();
