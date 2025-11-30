@@ -32,13 +32,6 @@
       @include pd.font(1.6rem, 400, pd.$base);
       cursor: pointer;
 
-      button {
-        padding: 27px 20px;
-
-        &.active {
-          border-bottom: 3px solid pd.$base;
-        }
-      }
       a {
         padding: 10px 20px;
 

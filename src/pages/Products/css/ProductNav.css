@@ -174,12 +174,6 @@ main {
   color: #000;
   cursor: pointer;
 }
-.ProductNav ul li button {
-  padding: 27px 20px;
-}
-.ProductNav ul li button.active {
-  border-bottom: 3px solid #000;
-}
 .ProductNav ul li a {
   padding: 10px 20px;
 }
